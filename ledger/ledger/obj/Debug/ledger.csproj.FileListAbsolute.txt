@@ -10,3 +10,4 @@ D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\De
 D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
 D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
 D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddRecord.resources
