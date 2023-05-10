@@ -1,0 +1,12 @@
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe.config
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.pdb
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Form1.resources
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
+D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
