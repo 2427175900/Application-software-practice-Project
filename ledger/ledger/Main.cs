@@ -16,5 +16,10 @@ namespace ledger
         {
             InitializeComponent();
         }
+
+        internal void UpdateLabel(string text)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
