@@ -16,7 +16,7 @@ namespace ledger
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddRecord());
+            Application.Run( new personal_ledger());
         }
     }
 }

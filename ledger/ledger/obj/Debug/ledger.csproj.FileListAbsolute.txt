@@ -11,3 +11,26 @@ D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\De
 D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
 D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
 D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddRecord.resources
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.AddRecord.resources
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.Form1.resources
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.exe
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.pdb
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\ledger.exe.config
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\ledger.exe
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\ledger.pdb
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.dll
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.dll
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.xml
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.xml
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.CopyComplete
+C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.Cap_amount.resources
