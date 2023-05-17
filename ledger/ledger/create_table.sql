@@ -1,3 +1,8 @@
+--清空表
+DROP TABLE all_user_info;
+DROP TABLE income_and_expenditure;
+DROP TABLE how_to_use;
+
 --t1，用户，上限金额，月收入，月支出，月份
 CREATE TABLE all_user_info (
     users_name TEXT PRIMARY KEY,
