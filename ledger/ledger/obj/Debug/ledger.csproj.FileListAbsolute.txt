@@ -11,3 +11,17 @@ D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\De
 D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
 D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
 D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddRecord.resources
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe.config
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.pdb
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddRecord.resources
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddUsers.resources
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Form1.resources
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
+C:\Users\a'su's\Documents\GitHub\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb

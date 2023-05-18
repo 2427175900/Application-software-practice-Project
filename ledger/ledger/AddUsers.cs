@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace ledger
 {
-    public partial class Form1 : Form
+    public partial class AddUsers : Form
     {
-        public Form1()
+        public AddUsers()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
