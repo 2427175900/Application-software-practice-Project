@@ -92,7 +92,6 @@
             this.上限金额.Size = new System.Drawing.Size(114, 24);
             this.上限金额.TabIndex = 2;
             this.上限金额.Text = "上限金额:";
-            this.上限金额.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox1
             // 

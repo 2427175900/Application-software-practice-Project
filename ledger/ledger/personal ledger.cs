@@ -17,11 +17,6 @@ namespace ledger
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Amount_modification_Click(object sender, EventArgs e)//修改金额的按钮
         {
             Form Cap_amount = new Cap_amount();// 创建一个新的窗口实例

@@ -17,7 +17,7 @@ namespace ledger
             InitializeComponent();
         }
 
-        private void textbox_TM1_KeyPress(object sender, KeyPressEventArgs e)//禁止输入数字
+        private void textbox_TM1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -25,7 +25,7 @@ namespace ledger
             }
         }
 
-        private void textbox_TM2_KeyPress(object sender, KeyPressEventArgs e)//禁止输入数字
+        private void textbox_TM2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {

@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="user_class.cs" />
     <EmbeddedResource Include="AddRecord.resx">
       <DependentUpon>AddRecord.cs</DependentUpon>
     </EmbeddedResource>

@@ -59,7 +59,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(415, 261);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_TM2_KeyPress);
             // 
             // tabPage1
             // 
@@ -80,6 +79,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "식사",
@@ -177,6 +177,7 @@
             this.textbox_TM2.Name = "textbox_TM2";
             this.textbox_TM2.Size = new System.Drawing.Size(86, 26);
             this.textbox_TM2.TabIndex = 12;
+            this.textbox_TM2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_TM2_KeyPress);
             // 
             // button2
             // 
