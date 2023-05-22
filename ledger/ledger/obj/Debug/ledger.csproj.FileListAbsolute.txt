@@ -57,3 +57,5 @@ C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\o
 C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CopyComplete
 C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
 C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\Newtonsoft.Json.xml
