@@ -46,7 +46,22 @@ namespace ledger
             Form2.StartPosition = FormStartPosition.Manual;
             Form2.Location = new Point(x, y);
 
-            Form2.Show();// 显示新的窗口
+            //传到xpenditure_box1的内容
+            Form2.DataAdded += (textbox1Content, textbox2Content, comboboxContent, dateTimeContent1) =>
+            {
+                string rowContent = $"{dateTimeContent1},{textbox1Content}, {textbox2Content}, {comboboxContent}"; // 将数据以逗号隔开拼接成一行内容
+                // 在事件处理程序中将一行内容添加到 expenditure_box 中
+                expenditure_box.Items.Add(rowContent);
+            };
+
+            //传到xpenditure_box2的内容
+            Form2.DataAdded2 += (textbox1Content2, textbox2Content2,dateTimeContent2) =>
+            {
+                string rowContent = $"{dateTimeContent2},{textbox1Content2}, {textbox2Content2}"; // 将数据以逗号隔开拼接成一行内容
+                // 在事件处理程序中将一行内容添加到 expenditure_box 中
+                income_box.Items.Add(rowContent);
+            };
+            Form2.ShowDialog();// 显示新的窗口
 
             // 在新窗口中查找名为 "tabControl1" 的 TabControl 控件
             TabControl tabControl = Form2.Controls.Find("tabControl1", true).FirstOrDefault() as TabControl;
@@ -62,6 +77,7 @@ namespace ledger
                     }
                 }
             }
+
         }
 
         private void Delete_Button_Click(object sender, EventArgs e)//删除条目的按钮

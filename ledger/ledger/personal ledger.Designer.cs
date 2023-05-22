@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.上限金额 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.shangxian = new System.Windows.Forms.Label();
             this.Amount_modification = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.zongzhichu = new System.Windows.Forms.Label();
-            this.shangxian = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -104,6 +104,16 @@
             this.groupBox1.Size = new System.Drawing.Size(171, 136);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // shangxian
+            // 
+            this.shangxian.AutoSize = true;
+            this.shangxian.Font = new System.Drawing.Font("Gulim", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.shangxian.Location = new System.Drawing.Point(17, 56);
+            this.shangxian.Name = "shangxian";
+            this.shangxian.Size = new System.Drawing.Size(57, 20);
+            this.shangxian.TabIndex = 4;
+            this.shangxian.Text = "label2";
             // 
             // Amount_modification
             // 
@@ -156,13 +166,13 @@
             this.income_box.CheckOnClick = true;
             this.income_box.FormattingEnabled = true;
             this.income_box.Items.AddRange(new object[] {
-            "日期, 用途 , 金额 ,备注2",
-            "日期, 用途 , 金额 ,备注",
-            "日期, 用途 , 金额 ,备注",
-            "日期, 用途 , 金额 ,备注2",
-            "日期, 用途 , 金额 ,备注",
-            "日期, 用途 , 金额 ,备注2",
-            "日期, 用途 , 金额 ,备注"});
+            "日期, 金额 ,备注2",
+            "日期, 金额 ,备注",
+            "日期, 金额 ,备注",
+            "日期, 金额 ,备注2",
+            "日期, 金额 ,备注",
+            "日期, 金额 ,备注2",
+            "日期, 金额 ,备注"});
             this.income_box.Location = new System.Drawing.Point(416, 92);
             this.income_box.Name = "income_box";
             this.income_box.Size = new System.Drawing.Size(361, 214);
@@ -385,16 +395,6 @@
             this.zongzhichu.Size = new System.Drawing.Size(34, 16);
             this.zongzhichu.TabIndex = 10;
             this.zongzhichu.Text = "xxx";
-            // 
-            // shangxian
-            // 
-            this.shangxian.AutoSize = true;
-            this.shangxian.Font = new System.Drawing.Font("Gulim", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.shangxian.Location = new System.Drawing.Point(17, 56);
-            this.shangxian.Name = "shangxian";
-            this.shangxian.Size = new System.Drawing.Size(57, 20);
-            this.shangxian.TabIndex = 4;
-            this.shangxian.Text = "label2";
             // 
             // personal_ledger
             // 
