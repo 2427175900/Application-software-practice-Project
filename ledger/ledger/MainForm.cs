@@ -10,16 +10,26 @@ using System.Windows.Forms;
 
 namespace ledger
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
+        public void MainForm_Load(object sender, EventArgs e)
+        {
 
+        }
         internal void UpdateLabel(string text)
         {
             throw new NotImplementedException();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            AddUser addUser = new AddUser();
+            addUser.ShowDialog();
         }
     }
 }

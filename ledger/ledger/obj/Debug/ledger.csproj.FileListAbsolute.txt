@@ -34,3 +34,28 @@ C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-
 C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.xml
 C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.CopyComplete
 C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.Cap_amount.resources
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe.config
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.pdb
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.dll
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.dll
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.xml
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.xml
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddRecord.resources
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Cap_amount.resources
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.MainForm.resources
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CopyComplete
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddUser.resources
+C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\info.db
