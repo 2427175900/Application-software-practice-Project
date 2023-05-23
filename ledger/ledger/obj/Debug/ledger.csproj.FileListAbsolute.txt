@@ -58,4 +58,3 @@ C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\D
 C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
 C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
 C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddUser.resources
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\info.db
