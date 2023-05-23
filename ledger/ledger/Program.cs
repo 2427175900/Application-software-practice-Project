@@ -17,6 +17,10 @@ namespace ledger
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run( new MainForm());
+<<<<<<< Updated upstream
+=======
+            //Application.Run(new personal_ledger());
+>>>>>>> Stashed changes
         }
     }
 }
