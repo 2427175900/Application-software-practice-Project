@@ -80,6 +80,9 @@ namespace ledger
                     // 执行插入命令
                     command.ExecuteNonQuery();
 
+                    // 提交事务
+                    transaction.Commit();
+
                     // 执行插入命令后的行数
                     int rowCountAfter = GetRowCount();
 
@@ -88,9 +91,7 @@ namespace ledger
                     MessageBox.Show(message, "行数", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                // 提交事务
-                transaction.Commit();
-
+              
                 // 显示数据插入成功提示
                 MessageBox.Show("数据已成功插入！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -104,7 +105,7 @@ namespace ledger
             finally
             {
                 // 关闭连接
-                connection.Close();
+            
                 this.Close();
             }
 
