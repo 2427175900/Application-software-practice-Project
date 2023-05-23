@@ -30,19 +30,21 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.yongtu = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.beizhu = new System.Windows.Forms.TextBox();
             this.textbox_TM1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.sure1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.beizhu2 = new System.Windows.Forms.TextBox();
             this.textbox_TM2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.sure2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -59,15 +61,15 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(415, 261);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_TM2_KeyPress);
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.dateTimePicker1);
+            this.tabPage1.Controls.Add(this.yongtu);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.beizhu);
             this.tabPage1.Controls.Add(this.textbox_TM1);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.sure1);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
@@ -78,20 +80,20 @@
             this.tabPage1.Text = "지출";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // yongtu
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.yongtu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.yongtu.FormattingEnabled = true;
+            this.yongtu.Items.AddRange(new object[] {
             "식사",
             "교통",
             "의료",
             "생활",
-            "",
             "기타"});
-            this.comboBox1.Location = new System.Drawing.Point(267, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(104, 24);
-            this.comboBox1.TabIndex = 8;
+            this.yongtu.Location = new System.Drawing.Point(267, 12);
+            this.yongtu.Name = "yongtu";
+            this.yongtu.Size = new System.Drawing.Size(104, 24);
+            this.yongtu.TabIndex = 8;
             // 
             // label2
             // 
@@ -103,13 +105,13 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "용도:";
             // 
-            // textBox3
+            // beizhu
             // 
-            this.textBox3.Location = new System.Drawing.Point(56, 64);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(267, 153);
-            this.textBox3.TabIndex = 6;
+            this.beizhu.Location = new System.Drawing.Point(56, 80);
+            this.beizhu.Multiline = true;
+            this.beizhu.Name = "beizhu";
+            this.beizhu.Size = new System.Drawing.Size(267, 137);
+            this.beizhu.TabIndex = 6;
             // 
             // textbox_TM1
             // 
@@ -119,20 +121,21 @@
             this.textbox_TM1.TabIndex = 4;
             this.textbox_TM1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_TM1_KeyPress);
             // 
-            // button1
+            // sure1
             // 
-            this.button1.Location = new System.Drawing.Point(327, 185);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "확인";
-            this.button1.UseVisualStyleBackColor = true;
+            this.sure1.Location = new System.Drawing.Point(327, 185);
+            this.sure1.Name = "sure1";
+            this.sure1.Size = new System.Drawing.Size(75, 32);
+            this.sure1.TabIndex = 3;
+            this.sure1.Text = "확인";
+            this.sure1.UseVisualStyleBackColor = true;
+            this.sure1.Click += new System.EventHandler(this.sure1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gulim", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(6, 64);
+            this.label3.Location = new System.Drawing.Point(6, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 21);
             this.label3.TabIndex = 2;
@@ -150,9 +153,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.dateTimePicker2);
+            this.tabPage2.Controls.Add(this.beizhu2);
             this.tabPage2.Controls.Add(this.textbox_TM2);
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.sure2);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
@@ -163,13 +167,13 @@
             this.tabPage2.Text = "수입";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // beizhu2
             // 
-            this.textBox2.Location = new System.Drawing.Point(56, 64);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(267, 153);
-            this.textBox2.TabIndex = 13;
+            this.beizhu2.Location = new System.Drawing.Point(56, 80);
+            this.beizhu2.Multiline = true;
+            this.beizhu2.Name = "beizhu2";
+            this.beizhu2.Size = new System.Drawing.Size(267, 137);
+            this.beizhu2.TabIndex = 13;
             // 
             // textbox_TM2
             // 
@@ -177,21 +181,23 @@
             this.textbox_TM2.Name = "textbox_TM2";
             this.textbox_TM2.Size = new System.Drawing.Size(86, 26);
             this.textbox_TM2.TabIndex = 12;
+            this.textbox_TM2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_TM2_KeyPress);
             // 
-            // button2
+            // sure2
             // 
-            this.button2.Location = new System.Drawing.Point(327, 185);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "확인";
-            this.button2.UseVisualStyleBackColor = true;
+            this.sure2.Location = new System.Drawing.Point(327, 185);
+            this.sure2.Name = "sure2";
+            this.sure2.Size = new System.Drawing.Size(75, 32);
+            this.sure2.TabIndex = 11;
+            this.sure2.Text = "확인";
+            this.sure2.UseVisualStyleBackColor = true;
+            this.sure2.Click += new System.EventHandler(this.sure2_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Gulim", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(6, 64);
+            this.label5.Location = new System.Drawing.Point(6, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 21);
             this.label5.TabIndex = 10;
@@ -206,6 +212,20 @@
             this.label6.Size = new System.Drawing.Size(59, 21);
             this.label6.TabIndex = 9;
             this.label6.Text = "금액:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(6, 45);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker2.TabIndex = 14;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 45);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 9;
             // 
             // AddRecord
             // 
@@ -231,15 +251,17 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button sure1;
+        private System.Windows.Forms.TextBox beizhu;
         private System.Windows.Forms.TextBox textbox_TM1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox yongtu;
+        private System.Windows.Forms.TextBox beizhu2;
         private System.Windows.Forms.TextBox textbox_TM2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button sure2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
