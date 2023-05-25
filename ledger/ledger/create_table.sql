@@ -1,35 +1,32 @@
 --清空表
-DROP TABLE all_user_info;
-DROP TABLE income_and_expenditure;
-DROP TABLE how_to_use;
+DROP TABLE user_info;
+DROP TABLE income;
+DROP TABLE expenditure;
 
---t1，用户，上限金额，月收入，月支出，月份
-CREATE TABLE all_user_info (
+--t1，用户，上限金额
+CREATE TABLE user_info (
     users_name TEXT PRIMARY KEY,
-    max_sum INTEGER,
-    moth_income INTEGER,
-    moth_expenditure INTEGER,
-    moth TEXT
+    max_sum INTEGER
 );
 
---t2，用户名，具体日期，金钱用途（/来源），日具体收入，日具体支出，用途备注（/来源备注）
-CREATE TABLE income_and_expenditure (
+--t2，收入，用户名，具体日期，日具体收入，日具体支出
+CREATE TABLE income (
     users_name TEXT PRIMARY KEY,
     today_date TEXT,
-    income_from TEXT,
     income_amount INTEGER,
     income_note TEXT,
-    expenditure_where TEXT,
-    expenditure_amount INTEGER,
-    expenditure_note TEXT
+    FOREIGN KEY (users_name) REFERENCES user_info (users_name)
 );
 
 --t3，日期，具体用途收支
-CREATE TABLE how_to_use (
-    today_date TEXT PRIMARY KEY,
+CREATE TABLE expenditure (
+    users_name TEXT PRIMARY KEY,
+    today_date TEXT,
     eating INTEGER,
     taking INTEGER,
     medical INTEGER,
     utility_bill INTEGER,
-    other INTEGER
+    other INTEGER,
+    expenditure_noate TEXT,
+    FOREIGN KEY (users_name) REFERENCES user_info (users_name)
 );
