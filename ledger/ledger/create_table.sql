@@ -20,15 +20,11 @@ CREATE TABLE income (
 
 --t3，日期，具体用途收支
 CREATE TABLE expenditure (
-    users_name TEXT PRIMARY KEY,
+    expenditure_id INT PRIMARY KEY,
+    users_name TEXT,
     today_date TEXT,
-    eating INTEGER,
-    taking INTEGER,
-    medical INTEGER,
-    utility_bill INTEGER,
-    other INTEGER,
+    types TEXT,
+    expenditure_amount INTEGER,
     expenditure_noate TEXT,
     FOREIGN KEY (users_name) REFERENCES user_info (users_name)
 );
-
-DELETE FROM user_info WHERE users_name='{name}';

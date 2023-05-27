@@ -20,14 +20,14 @@ namespace ledger
         {
             String sqlname = "Data Source=user_info.db";
             this.conn = new SQLiteConnection(sqlname);
-            SQLiteCommand cmd = new SQLiteCommand("PRAGMA foreign_keys = ON", this.conn);
-            cmd.ExecuteNonQuery();
         }
 
         //打开数据库
         public void dbopen()
         {
             this.conn.Open();
+            SQLiteCommand cmd = new SQLiteCommand("PRAGMA foreign_keys = ON", this.conn);
+            cmd.ExecuteNonQuery();
         }
 
         //关闭数据库
@@ -167,52 +167,29 @@ namespace ledger
 
 
         //t3 操作
-        public void insert_new_expenditure(String name, String today_date)
+        public void insert_new_expenditure(String name, String today_date, String types)
         {
             //向支出表中插入新内容
-            //需要输入 名字 日期 收入金额
+            //需要输入 名字 日期 类型
 
-            String sql = $"INSERT INTO expenditure(users_name, today_date, eating, taking, medical, utility_bill, other, expenditure_note) VALUES('{name}', '{today_date}', 0, 0, 0, 0, 0, 'None')";
+            String sql = $"INSERT INTO expenditure(users_name, today_date, types, expenditure_amount, expenditure_note) VALUES('{name}', '{today_date}', '{types}', 0, 'None')";
             execute_sql(sql);
 
             return;
         }
 
-        public void update_exoenditure_amount(String name, String today_date, String type, int amount)
+        public void update_exoenditure_amount(String name, String today_date, String types, int amount)
         {
             //更新支出表的具体金额
             //type eat = eating, tak = taking, med = medical, utb = utility_bill, oth = other
 
-            if (type == "eat")
-            {
-                String sql = $"UPDATE expenditure SET eating={amount} WHERE users_name='{name}' AND today_date='{today_date}'";
-                execute_sql(sql);
-            }
-            else if (type == "tak")
-            {
-                String sql = $"UPDATE expenditure SET taking={amount} WHERE users_name='{name}' AND today_date='{today_date}'";
-                execute_sql(sql);
-            }
-            else if (type == "med")
-            {
-                String sql = $"UPDATE expenditure SET medical={amount} WHERE users_name='{name}' AND today_date='{today_date}'";
-                execute_sql(sql);
-            }
-            else if (type == "utb")
-            {
-                String sql = $"UPDATE expenditure SET utility_bill={amount} WHERE users_name='{name}' AND today_date='{today_date}'";
-                execute_sql(sql);
-            }
-            else if (type == "oth")
-            {
-                String sql = $"UPDATE expenditure SET other={amount} WHERE users_name='{name}' AND today_date='{today_date}'";
-                execute_sql(sql);
-            }
+            String sql = $"UPDATE expenditure SET types='{types}', expenditure_amount={amount} WHERE users_name='{name}' AND today_date='{today_date}'";
+            execute_sql(sql); 
 
             return;
         }
 
-        public int rtn_expenditure_amount(String name, String today_date, String type )
+        public int rtn_expenditure_amount(String name, String today_date, String types)
         {
             //返回具体支出金额
             //type eat = eating, tak = taking, med = medical, utb = utility_bill, oth = other
@@ -220,74 +197,39 @@ namespace ledger
             int rtn;
             String sql;
 
-            if (type == "eat")
-            {
-                sql = $"SELECT eating FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}''";
-                DataTable dt = select_sql(sql);
-                rtn = Convert.ToInt32(dt.Rows[0]["eating"]);
+            sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}''";
+            DataTable dt = select_sql(sql);
+            rtn = Convert.ToInt32(dt.Rows[0]["types"]);
 
-                return rtn;
-            }
-            else if (type == "tak")
-            {
-                sql = $"SELECT taking FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}''";
-                DataTable dt = select_sql(sql);
-                rtn = Convert.ToInt32(dt.Rows[0]["taking"]);
-
-                return rtn;
-            }
-            else if (type == "med")
-            {
-                sql = $"SELECT medical FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}''";
-                DataTable dt = select_sql(sql);
-                rtn = Convert.ToInt32(dt.Rows[0]["medical"]);
-
-                return rtn;
-            }
-            else if (type == "utb")
-            {
-                sql = $"SELECT utiliby_bill FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}''";
-                DataTable dt = select_sql(sql);
-                rtn = Convert.ToInt32(dt.Rows[0]["utility_bill"]);
-
-                return rtn;
-            }
-            else
-            {
-                sql = $"SELECT other FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}''";
-                DataTable dt = select_sql(sql);
-                rtn = Convert.ToInt32(dt.Rows[0]["other"]);
-
-                return rtn;
-            }
+            return rtn;
         }
 
-        public void update_expenditure_note(String name, String today_date, String note)
+        public void update_expenditure_note(String name, String today_date, String types, String note)
         {
-            //给 日期为today_date，用户为name的支出条目更新 note
+            //给 日期为today_date，用户为name，类型为types的支出条目更新 note
 
-            String sql = $"UPDATE expenditure SET income_note='{note}' WHERE users_name='{name}' AND today_date='{today_date}'";
+            String sql = $"UPDATE expenditure SET income_note='{note}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             execute_sql(sql);
 
             return;
         }
 
-        public String rtn_expenditure_note(String name, String today_date)
+        public String rtn_expenditure_note(String name, String today_date, String types)
         {
             //返回 日期为today_date名字为name的note 支出
 
-            String sql = $"SELECT expenditure_note FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}'";
+            String sql = $"SELECT expenditure_note FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             DataTable dt = select_sql(sql);
             String rtn = dt.Rows[0]["note"].ToString();
 
             return rtn;
         }
 
-        public void del_expenditure(String name, String today_date)
+        public void del_expenditure(String name, String today_date, String types)
         {
-            //删除用户 name 于日期today_date的行
+            //删除用户 name 于日期today_date，类型为types的行
 
-            String sql = $"DELETE FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}'";
+            String sql = $"DELETE FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             execute_sql(sql);
 
             return;
