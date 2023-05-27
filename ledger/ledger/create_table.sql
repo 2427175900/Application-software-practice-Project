@@ -26,6 +26,6 @@ CREATE TABLE expenditure (
     today_date TEXT,
     types TEXT,
     expenditure_amount INTEGER,
-    expenditure_noate TEXT,
+    expenditure_note TEXT,
     FOREIGN KEY (users_name) REFERENCES user_info (users_name)
 );
