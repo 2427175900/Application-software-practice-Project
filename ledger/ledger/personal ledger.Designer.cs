@@ -42,11 +42,11 @@
             this.Delete_Button = new System.Windows.Forms.Button();
             this.Add_Button = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelqita = new System.Windows.Forms.Label();
+            this.labelshuidian = new System.Windows.Forms.Label();
+            this.labelmedc = new System.Windows.Forms.Label();
+            this.labeljiaotong = new System.Windows.Forms.Label();
+            this.labelfood = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,10 +56,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.zongzhichu = new System.Windows.Forms.Label();
+            this.jieyu = new System.Windows.Forms.Label();
+            this.labelzongshouru = new System.Windows.Forms.Label();
+            this.labelzongzhichu = new System.Windows.Forms.Label();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+            this.chushihuariqi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -73,6 +74,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(172, 26);
             this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // user_name
             // 
@@ -129,6 +131,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chushihuariqi);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.income_box);
@@ -184,11 +187,7 @@
             this.expenditure_box.Items.AddRange(new object[] {
             "1",
             "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7"});
+            "3"});
             this.expenditure_box.Location = new System.Drawing.Point(21, 92);
             this.expenditure_box.Name = "expenditure_box";
             this.expenditure_box.Size = new System.Drawing.Size(361, 214);
@@ -216,11 +215,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.labelqita);
+            this.groupBox3.Controls.Add(this.labelshuidian);
+            this.groupBox3.Controls.Add(this.labelmedc);
+            this.groupBox3.Controls.Add(this.labeljiaotong);
+            this.groupBox3.Controls.Add(this.labelfood);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
@@ -234,50 +233,50 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "当月消费一览";
             // 
-            // label14
+            // labelqita
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(137, 122);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 16);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "label14";
+            this.labelqita.AutoSize = true;
+            this.labelqita.Location = new System.Drawing.Point(137, 122);
+            this.labelqita.Name = "labelqita";
+            this.labelqita.Size = new System.Drawing.Size(57, 16);
+            this.labelqita.TabIndex = 9;
+            this.labelqita.Text = "label14";
             // 
-            // label13
+            // labelshuidian
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 122);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 16);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "label13";
+            this.labelshuidian.AutoSize = true;
+            this.labelshuidian.Location = new System.Drawing.Point(15, 122);
+            this.labelshuidian.Name = "labelshuidian";
+            this.labelshuidian.Size = new System.Drawing.Size(56, 16);
+            this.labelshuidian.TabIndex = 8;
+            this.labelshuidian.Text = "label13";
             // 
-            // label12
+            // labelmedc
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(261, 59);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 16);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "label12";
+            this.labelmedc.AutoSize = true;
+            this.labelmedc.Location = new System.Drawing.Point(261, 59);
+            this.labelmedc.Name = "labelmedc";
+            this.labelmedc.Size = new System.Drawing.Size(56, 16);
+            this.labelmedc.TabIndex = 7;
+            this.labelmedc.Text = "label12";
             // 
-            // label11
+            // labeljiaotong
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(137, 59);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 16);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "label11";
+            this.labeljiaotong.AutoSize = true;
+            this.labeljiaotong.Location = new System.Drawing.Point(137, 59);
+            this.labeljiaotong.Name = "labeljiaotong";
+            this.labeljiaotong.Size = new System.Drawing.Size(56, 16);
+            this.labeljiaotong.TabIndex = 6;
+            this.labeljiaotong.Text = "label11";
             // 
-            // label10
+            // labelfood
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 59);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 16);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "label10";
+            this.labelfood.AutoSize = true;
+            this.labelfood.Location = new System.Drawing.Point(15, 59);
+            this.labelfood.Name = "labelfood";
+            this.labelfood.Size = new System.Drawing.Size(56, 16);
+            this.labelfood.TabIndex = 5;
+            this.labelfood.Text = "label10";
             // 
             // label9
             // 
@@ -353,9 +352,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.zongzhichu);
+            this.groupBox4.Controls.Add(this.jieyu);
+            this.groupBox4.Controls.Add(this.labelzongshouru);
+            this.groupBox4.Controls.Add(this.labelzongzhichu);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.label16);
@@ -367,36 +366,46 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "小结";
             // 
-            // label20
+            // jieyu
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(93, 136);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 16);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "xxx";
+            this.jieyu.AutoSize = true;
+            this.jieyu.Location = new System.Drawing.Point(93, 136);
+            this.jieyu.Name = "jieyu";
+            this.jieyu.Size = new System.Drawing.Size(34, 16);
+            this.jieyu.TabIndex = 15;
+            this.jieyu.Text = "xxx";
             // 
-            // label19
+            // labelzongshouru
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(93, 86);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(34, 16);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "xxx";
+            this.labelzongshouru.AutoSize = true;
+            this.labelzongshouru.Location = new System.Drawing.Point(93, 86);
+            this.labelzongshouru.Name = "labelzongshouru";
+            this.labelzongshouru.Size = new System.Drawing.Size(34, 16);
+            this.labelzongshouru.TabIndex = 14;
+            this.labelzongshouru.Text = "xxx";
             // 
-            // zongzhichu
+            // labelzongzhichu
             // 
-            this.zongzhichu.AutoSize = true;
-            this.zongzhichu.Location = new System.Drawing.Point(93, 34);
-            this.zongzhichu.Name = "zongzhichu";
-            this.zongzhichu.Size = new System.Drawing.Size(34, 16);
-            this.zongzhichu.TabIndex = 10;
-            this.zongzhichu.Text = "xxx";
+            this.labelzongzhichu.AutoSize = true;
+            this.labelzongzhichu.Location = new System.Drawing.Point(93, 34);
+            this.labelzongzhichu.Name = "labelzongzhichu";
+            this.labelzongzhichu.Size = new System.Drawing.Size(34, 16);
+            this.labelzongzhichu.TabIndex = 10;
+            this.labelzongzhichu.Text = "xxx";
             // 
             // sqLiteCommand1
             // 
             this.sqLiteCommand1.CommandText = null;
+            // 
+            // chushihuariqi
+            // 
+            this.chushihuariqi.Location = new System.Drawing.Point(436, 25);
+            this.chushihuariqi.Name = "chushihuariqi";
+            this.chushihuariqi.Size = new System.Drawing.Size(149, 25);
+            this.chushihuariqi.TabIndex = 7;
+            this.chushihuariqi.Text = "显示全部日期条目";
+            this.chushihuariqi.UseVisualStyleBackColor = true;
+            this.chushihuariqi.Click += new System.EventHandler(this.chushihuariqi_Click);
             // 
             // personal_ledger
             // 
@@ -446,19 +455,20 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelqita;
+        private System.Windows.Forms.Label labelshuidian;
+        private System.Windows.Forms.Label labelmedc;
+        private System.Windows.Forms.Label labeljiaotong;
+        private System.Windows.Forms.Label labelfood;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label zongzhichu;
+        private System.Windows.Forms.Label jieyu;
+        private System.Windows.Forms.Label labelzongshouru;
+        private System.Windows.Forms.Label labelzongzhichu;
         private System.Windows.Forms.Label shangxian;
         private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
+        private System.Windows.Forms.Button chushihuariqi;
     }
 }

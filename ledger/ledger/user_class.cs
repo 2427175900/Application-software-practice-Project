@@ -7,7 +7,6 @@ using System.Data.SQLite;
 using System.Data;
 using System.Data.Entity.Spatial;
 using System.Xml.Linq;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ledger
 {
@@ -100,7 +99,7 @@ namespace ledger
 
             String sql = $"SELECT users_name FROM user_info WHERE users_name='{name}'";
             DataTable dt = select_sql(sql);
-            String rtn = dt.Rows[0]["uusers_name"].ToString();
+            String rtn = dt.Rows[0]["users_name"].ToString();
 
             return rtn;
         }
@@ -153,6 +152,22 @@ namespace ledger
             return rtn;
         }
 
+        public int[] rtn_income_amount_all(String name)
+        {
+            //返回 名字为name的全部收入金额
+
+            String sql = $"SELECT income_amount FROM income WHERE users_name='{name}'";
+            DataTable dt = select_sql(sql);
+
+            int[] dataArray = new int[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = Convert.ToInt32(dt.Rows[i]["income_amount"]);
+            }
+
+            return dataArray;
+        }
+
         public String rtn_income_note(String name, String today_date)
         {
             //返回 日期为today_date名字为name的note
@@ -173,6 +188,22 @@ namespace ledger
             String rtn = dt.Rows[0]["income_id"].ToString();
 
             return rtn;
+        }
+
+        public String[] rtn_income_id_two_inp(String name, String today_date)
+        {
+            //返回 收入 日期today_date所有name的id 
+
+            String sql = $"SELECT income_id FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
+            DataTable dt = select_sql(sql);
+
+            string[] dataArray = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = dt.Rows[i]["income_id"].ToString();
+            }
+
+            return dataArray;
         }
 
         public String[] rtn_income_id_all(String name)
@@ -196,6 +227,16 @@ namespace ledger
             //删除用户 name 于日期today_date的行
 
             String sql = $"DELETE FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
+            execute_sql(sql);
+
+            return;
+        }
+
+        public void del_income_id(String exp_id)
+        {
+            //income_id
+
+            String sql = $"DELETE FROM income WHERE income_id='{exp_id}'";
             execute_sql(sql);
 
             return;
@@ -245,6 +286,40 @@ namespace ledger
             return rtn;
         }
 
+        public int[] rtn_expenditure_amount_type(String name, String types)
+        {
+            //返回具体支出金额
+            //type eat = eating, tak = taking, med = medical, utb = utility_bill, oth = other
+
+            String sql;
+
+            sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND types='{types}'";
+            DataTable dt = select_sql(sql);
+            int[] dataArray = new int[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = Convert.ToInt32(dt.Rows[i]["expenditure_amount"]);
+            }
+
+            return dataArray;
+        }
+
+        public int[] rtn_expenditure_amount_all(String name)
+        {
+            //返回 名字为name的全部支出金额
+
+            String sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}'";
+            DataTable dt = select_sql(sql);
+
+            int[] dataArray = new int[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = Convert.ToInt32(dt.Rows[i]["expenditure_amount"]);
+            }
+
+            return dataArray;
+        }
+
         public void update_expenditure_note(String name, String today_date, String types, String note)
         {
             //给 日期为today_date，用户为name，类型为types的支出条目更新 note
@@ -273,12 +348,25 @@ namespace ledger
         public String rtn_expenditure_id(String name, String today_date, String types)
         {
             //返回支出的id
-
             String sql = $"SELECT expenditure_id FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             DataTable dt = select_sql(sql);
             String rtn = dt.Rows[0]["expenditure_id"].ToString();
 
             return rtn;
+        }
+
+        public String[] rtn_expenditure_id_two_inp(String name, String today_date)
+        {
+            //返回支出的id 传参name和日期today_date
+            String sql = $"SELECT expenditure_id FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}'";
+            DataTable dt = select_sql(sql);
+            string[] dataArray = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = dt.Rows[i]["expenditure_id"].ToString();
+            }
+
+            return dataArray;
         }
 
         public String[] rtn_expenditure_id_all(String name)
@@ -302,6 +390,16 @@ namespace ledger
             //删除用户 name 于日期today_date，类型为types的行
 
             String sql = $"DELETE FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
+            execute_sql(sql);
+
+            return;
+        }
+
+        public void del_expenditure_id(String exp_id)
+        {
+            //删除expenditure_id
+
+            String sql = $"DELETE FROM expenditure WHERE expenditure_id='{exp_id}'";
             execute_sql(sql);
 
             return;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -30,6 +31,7 @@ namespace ledger
             int sum = db.rtn_max_sum("yzx");//根据名字找上限金额                      跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
             shangxian.Text = Convert.ToString(sum);//修改显示上限金额的lable
 
+
             string[] tiaomu1=db.rtn_expenditure_id_all("yzx");   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
             string[] tiaomu2 = db.rtn_income_id_all("yzx");                                //跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
             expenditure_box.Items.Clear();//先清除expenditure_box.Items,再重新重数据库中遍历
@@ -42,6 +44,71 @@ namespace ledger
             {
                 income_box.Items.Add(item); // 将数组中的每个元素添加为选项
             }
+
+            //总支出
+            int[] zhichu = db.rtn_expenditure_amount_all("yzx");//跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            int zongzhichujine = 0; //总支出计算
+            for (int i = 0; i < zhichu.Length; i++)//循环遍历
+            {
+                zongzhichujine += zhichu[i];
+            }
+            labelzongzhichu.Text = zongzhichujine.ToString();//更改label
+            //总收入
+            int[] shouru = db.rtn_income_amount_all("yzx");//跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            int zongshourujine = 0; //总支出计算
+            for (int i = 0; i < shouru.Length; i++)//循环遍历
+            {
+                zongshourujine += shouru[i];
+            }
+            labelzongshouru.Text = zongshourujine.ToString();//更改label
+            //结余计算
+            jieyu.Text = Convert.ToString(Convert.ToInt32(zongshourujine) - Convert.ToInt32(zongzhichujine));
+
+            //饮食总支出
+            int[] food = db.rtn_expenditure_amount_type("yzx", "식사");
+            int foodzong = 0; //总支出计算
+            for (int i = 0; i < food.Length; i++)//循环遍历
+            {
+                foodzong += food[i];
+            }
+            labelfood.Text = foodzong.ToString();
+
+            //交通总支出
+            int[] jiaotong = db.rtn_expenditure_amount_type("yzx", "교통");
+            int jiaotongzong = 0; //总支出计算
+            for (int i = 0; i < jiaotong.Length; i++)//循环遍历
+            {
+                jiaotongzong += jiaotong[i];
+            }
+            labeljiaotong.Text = jiaotongzong.ToString();
+
+            //医疗总支出
+            int[] medc = db.rtn_expenditure_amount_type("yzx", "의료");
+            int medczong = 0; //总支出计算
+            for (int i = 0; i < medc.Length; i++)//循环遍历
+            {
+                medczong += medc[i];
+            }
+            labelmedc.Text = medczong.ToString();
+
+            //生活总支出
+            int[] shuidian = db.rtn_expenditure_amount_type("yzx", "생활");
+            int shuidianzong = 0; //总支出计算
+            for (int i = 0; i < shuidian.Length; i++)//循环遍历
+            {
+                shuidianzong += shuidian[i];
+            }
+            labelshuidian.Text = shuidianzong.ToString();
+
+            //其他总支出
+            int[] qita = db.rtn_expenditure_amount_type("yzx", "기타");
+            int qitazong = 0; //总支出计算
+            for (int i = 0; i < qita.Length; i++)//循环遍历
+            {
+                qitazong += qita[i];
+            }
+            labelqita.Text = qitazong.ToString();
+
             db.dbclose();//关闭数据库
         }
 
@@ -105,6 +172,71 @@ namespace ledger
             {
                 income_box.Items.Add(item); // 将数组中的每个元素添加为选项
             }
+
+            //总支出
+            int[] zhichu = db.rtn_expenditure_amount_all("yzx");//跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            int zongzhichujine = 0; //总支出计算
+            for (int i = 0; i < zhichu.Length; i++)//循环遍历
+            {
+                zongzhichujine += zhichu[i];
+            }
+            labelzongzhichu.Text = zongzhichujine.ToString();//更改label
+            //总收入
+            int[] shouru = db.rtn_income_amount_all("yzx");//跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            int zongshourujine = 0; //总支出计算
+            for (int i = 0; i < shouru.Length; i++)//循环遍历
+            {
+                zongshourujine += shouru[i];
+            }
+            labelzongshouru.Text = zongshourujine.ToString();//更改label
+            //结余计算
+            jieyu.Text = Convert.ToString(Convert.ToInt32(zongshourujine) - Convert.ToInt32(zongzhichujine));
+
+            //饮食总支出
+            int[] food = db.rtn_expenditure_amount_type("yzx", "식사");
+            int foodzong = 0; //总支出计算
+            for (int i = 0; i < food.Length; i++)//循环遍历
+            {
+                foodzong += food[i];
+            }
+            labelfood.Text = foodzong.ToString();
+
+            //交通总支出
+            int[] jiaotong = db.rtn_expenditure_amount_type("yzx", "교통");
+            int jiaotongzong = 0; //总支出计算
+            for (int i = 0; i < jiaotong.Length; i++)//循环遍历
+            {
+                jiaotongzong += jiaotong[i];
+            }
+            labeljiaotong.Text = jiaotongzong.ToString();
+
+            //医疗总支出
+            int[] medc = db.rtn_expenditure_amount_type("yzx", "의료");
+            int medczong = 0; //总支出计算
+            for (int i = 0; i < medc.Length; i++)//循环遍历
+            {
+                medczong += medc[i];
+            }
+            labelmedc.Text = medczong.ToString();
+
+            //生活总支出
+            int[] shuidian = db.rtn_expenditure_amount_type("yzx", "생활");
+            int shuidianzong = 0; //总支出计算
+            for (int i = 0; i < shuidian.Length; i++)//循环遍历
+            {
+                shuidianzong += shuidian[i];
+            }
+            labelshuidian.Text = shuidianzong.ToString();
+
+            //其他总支出
+            int[] qita = db.rtn_expenditure_amount_type("yzx", "기타");
+            int qitazong = 0; //总支出计算
+            for (int i = 0; i < qita.Length; i++)//循环遍历
+            {
+                qitazong += qita[i];
+            }
+            labelqita.Text = qitazong.ToString();
+
             db.dbclose();
         }
 
@@ -114,16 +246,148 @@ namespace ledger
             {
                 if (expenditure_box.GetItemChecked(i))
                 {
-                    expenditure_box.Items.RemoveAt(i);
+                    string selectedItem = expenditure_box.Items[i].ToString();//把选中的东西存成变量
+                    db.dbopen();
+                    db.del_expenditure_id(selectedItem);//删除!!
+                    //更新expenditure_box
+                    string[] tiaomu1 = db.rtn_expenditure_id_all("yzx");   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!! 
+                    expenditure_box.Items.Clear();//先清除expenditure_box.Items,再重新重数据库中遍历
+                    foreach (string item in tiaomu1)//遍历写进items
+                    {
+                        expenditure_box.Items.Add(item); // 将数组中的每个元素添加为选项
+                    }
+                    db.dbclose();
                 }
             }
             for (int i = income_box.Items.Count - 1; i >= 0; i--)
             {
                 if (income_box.GetItemChecked(i))
                 {
-                    income_box.Items.RemoveAt(i);
+                    string selectedItem2 = income_box.Items[i].ToString();
+                    db.dbopen();
+                    db.del_income_id(selectedItem2);//删除!!
+                    //更新income_box
+                    string[] tiaomu2 = db.rtn_income_id_all("yzx");        //修改条目的checklistbox  跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+                    income_box.Items.Clear();//先清除income_box.Items,再重新重数据库中遍历
+                    foreach (string item in tiaomu2)//遍历写进items
+                    {
+                        income_box.Items.Add(item); // 将数组中的每个元素添加为选项
+                    }
+                    db.dbclose();
                 }
             }
+
+            db.dbopen();
+
+            //更新总支出
+            int[] zhichu = db.rtn_expenditure_amount_all("yzx");//跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            int zongzhichujine = 0; //总支出计算
+            for (int i = 0; i < zhichu.Length; i++)//循环遍历
+            {
+                zongzhichujine += zhichu[i];
+            }
+            labelzongzhichu.Text = zongzhichujine.ToString();//更改label
+            //更新总收入
+            int[] shouru = db.rtn_income_amount_all("yzx");//跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            int zongshourujine = 0; //总支出计算
+            for (int i = 0; i < shouru.Length; i++)//循环遍历
+            {
+                zongshourujine += shouru[i];
+            }
+            labelzongshouru.Text = zongshourujine.ToString();//更改label
+            //结余计算
+            jieyu.Text = Convert.ToString(Convert.ToInt32(zongshourujine) - Convert.ToInt32(zongzhichujine));
+
+            //饮食总支出
+            int[] food = db.rtn_expenditure_amount_type("yzx", "식사");
+            int foodzong = 0; //总支出计算
+            for (int i = 0; i < food.Length; i++)//循环遍历
+            {
+                foodzong += food[i];
+            }
+            labelfood.Text = foodzong.ToString();
+
+            //交通总支出
+            int[] jiaotong = db.rtn_expenditure_amount_type("yzx", "교통");
+            int jiaotongzong = 0; //总支出计算
+            for (int i = 0; i < jiaotong.Length; i++)//循环遍历
+            {
+                jiaotongzong += jiaotong[i];
+            }
+            labeljiaotong.Text = jiaotongzong.ToString();
+
+            //医疗总支出
+            int[] medc = db.rtn_expenditure_amount_type("yzx", "의료");
+            int medczong = 0; //总支出计算
+            for (int i = 0; i < medc.Length; i++)//循环遍历
+            {
+                medczong += medc[i];
+            }
+            labelmedc.Text = medczong.ToString();
+
+            //生活总支出
+            int[] shuidian = db.rtn_expenditure_amount_type("yzx", "생활");
+            int shuidianzong = 0; //总支出计算
+            for (int i = 0; i < shuidian.Length; i++)//循环遍历
+            {
+                shuidianzong += shuidian[i];
+            }
+            labelshuidian.Text = shuidianzong.ToString();
+
+            //其他总支出
+            int[] qita = db.rtn_expenditure_amount_type("yzx", "기타");
+            int qitazong = 0; //总支出计算
+            for (int i = 0; i < qita.Length; i++)//循环遍历
+            {
+                qitazong += qita[i];
+            }
+            labelqita.Text = qitazong.ToString();
+
+            db.dbclose();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)//根据日期筛选条目
+        {
+            DateTime selectedDateTime = dateTimePicker1.Value;
+            DateTime dateOnly = selectedDateTime.Date;
+            db.dbopen();
+            string[] riqitiaomu = db.rtn_expenditure_id_two_inp("yzx", Convert.ToString(dateOnly));   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!! 
+
+            expenditure_box.Items.Clear();//先清除expenditure_box.Items,再重新重数据库中遍历
+
+            foreach (string item in riqitiaomu)//遍历写进items
+            {
+                expenditure_box.Items.Add(item); // 将数组中的每个元素添加为选项
+            }
+
+            string[] riqitiaomu2 = db.rtn_income_id_two_inp("yzx", Convert.ToString(dateOnly));   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!! 
+            income_box.Items.Clear();//先清除expenditure_box.Items,再重新重数据库中遍历
+            foreach (string item in riqitiaomu2)//遍历写进items
+            {
+                income_box.Items.Add(item); // 将数组中的每个元素添加为选项
+            }
+            db.dbclose();
+        }
+
+        private void chushihuariqi_Click(object sender, EventArgs e)  //显示全部日期条目按钮
+        {
+            db.dbopen();
+
+            string[] tiaomu1 = db.rtn_expenditure_id_all("yzx");   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!! 
+            expenditure_box.Items.Clear();//先清除expenditure_box.Items,再重新重数据库中遍历
+            foreach (string item in tiaomu1)//遍历写进items
+            {
+                expenditure_box.Items.Add(item); // 将数组中的每个元素添加为选项
+            }
+
+            string[] tiaomu2 = db.rtn_income_id_all("yzx");        //修改条目的checklistbox  跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            income_box.Items.Clear();//先清除income_box.Items,再重新重数据库中遍历
+            foreach (string item in tiaomu2)//遍历写进items
+            {
+                income_box.Items.Add(item); // 将数组中的每个元素添加为选项
+            }
+
+            db.dbclose();
         }
     }
 }

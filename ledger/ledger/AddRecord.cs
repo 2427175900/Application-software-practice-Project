@@ -58,11 +58,12 @@ namespace ledger
                     string comboboxContent = yongtu.Text; // 获取用途
                     string textbox2Content = beizhu.Text; // 获取备注
                     DateTime dateTimeContent1 = dateTimePicker1.Value; // 获取日期选择器的时间
+                    DateTime dateOnly1 = dateTimeContent1.Date;
                     //开始操作数据库
                     db.dbopen();//打开数据库
-                    db.insert_new_expenditure(user_name, Convert.ToString(dateTimeContent1), comboboxContent);//写入 用户 时间 用途
-                    db.update_expenditure_amount(user_name, Convert.ToString(dateTimeContent1), comboboxContent, Convert.ToInt32(textbox1Content));//写入金额
-                    db.update_expenditure_note(user_name, Convert.ToString(dateTimeContent1), comboboxContent, textbox2Content);//写入备注
+                    db.insert_new_expenditure(user_name, Convert.ToString(dateOnly1), comboboxContent);//写入 用户 时间 用途
+                    db.update_expenditure_amount(user_name, Convert.ToString(dateOnly1), comboboxContent, Convert.ToInt32(textbox1Content));//写入金额
+                    db.update_expenditure_note(user_name, Convert.ToString(dateOnly1), comboboxContent, textbox2Content);//写入备注
                     db.dbclose();//关闭数据库
                     this.Close(); // 关闭窗口
                 }
@@ -82,10 +83,11 @@ namespace ledger
                 string textbox1Content2 = textbox_TM2.Text; // 获取金额2
                 string textbox2Content2 = beizhu2.Text; // 获取备注2
                 DateTime dateTimeContent2 = dateTimePicker2.Value; // 获取日期选择器的时间
+                DateTime dateOnly2 = dateTimeContent2.Date;
                 //开始操作数据库
                 db.dbopen();
-                db.insert_new_income(user_name, Convert.ToString(dateTimeContent2), Convert.ToInt32(textbox1Content2));//写入 用户 时间 收入
-                db.update_income_note(user_name, Convert.ToString(dateTimeContent2), textbox2Content2);//写入备注
+                db.insert_new_income(user_name, Convert.ToString(dateOnly2), Convert.ToInt32(textbox1Content2));//写入 用户 时间 收入
+                db.update_income_note(user_name, Convert.ToString(dateOnly2), textbox2Content2);//写入备注
                 db.dbclose();//关闭数据库
                 this.Close(); // 关闭窗口
             }
