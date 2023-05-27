@@ -201,6 +201,16 @@ namespace ledger
             return;
         }
 
+        public void del_income_id(String exp_id)
+        {
+            //income_id
+
+            String sql = $"DELETE FROM income WHERE income_id='{exp_id}'";
+            execute_sql(sql);
+
+            return;
+        }
+
 
         //t3 操作
         public void insert_new_expenditure(String name, String today_date, String types)
@@ -310,7 +320,7 @@ namespace ledger
         {
             //删除expenditure_id
 
-            String sql = $"DELETE FROM expenditure WHERE expenditure_id=‘{exp_id}'";
+            String sql = $"DELETE FROM expenditure WHERE expenditure_id='{exp_id}'";
             execute_sql(sql);
 
             return;
