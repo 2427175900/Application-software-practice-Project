@@ -62,11 +62,12 @@ namespace ledger
         public void insert_new(String name)
         {
             //创建一个新用户，名字为name
-
+            /*
             Random random = new Random();
             int randomNumber = random.Next(0, 100);
             String pk = name + randomNumber.ToString();
-            String sql = $"INSERT INTO user_info (users_id, users_name, max_sum) VALUES ('{pk}', '{name}', 0)";
+           */
+            String sql = $"INSERT INTO user_info (users_name, max_sum) VALUES ('{name}', 0)";
             execute_sql(sql);
 
             return;

@@ -5,8 +5,7 @@ DROP TABLE expenditure;
 
 --t1，用户，上限金额
 CREATE TABLE user_info (
-    users_id TEXT PRIMARY KEY,
-    users_name TEXT,
+    users_name TEXT PRIMARY KEY,
     max_sum INTEGER
 );
 
