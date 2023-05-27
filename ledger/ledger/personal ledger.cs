@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,10 +24,25 @@ namespace ledger
         private void personal_ledger_Load(object sender, EventArgs e)//在窗口打开的时候更新数据
         {
             db.dbopen();//等待窗口关闭后,打开数据库更新数据
+            
             //db.insert_new("yzx");  //测试的时候添加的用户
+
             int sum = db.rtn_max_sum("yzx");//根据名字找上限金额                      跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
-            shangxian.Text = Convert.ToString(sum);//修改显示的lable
-            db.dbclose();
+            shangxian.Text = Convert.ToString(sum);//修改显示上限金额的lable
+
+            string[] tiaomu1=db.rtn_expenditure_id_all("yzx");   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            string[] tiaomu2 = db.rtn_income_id_all("yzx");                                //跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            expenditure_box.Items.Clear();//先清除expenditure_box.Items,再重新重数据库中遍历
+            income_box.Items.Clear();//先清除income_box.Items,再重新重数据库中遍历
+            foreach (string item in tiaomu1)//遍历写进items
+            {
+                expenditure_box.Items.Add(item); // 将数组中的每个元素添加为选项
+            }
+            foreach (string item in tiaomu2)//遍历写进items
+            {
+                income_box.Items.Add(item); // 将数组中的每个元素添加为选项
+            }
+            db.dbclose();//关闭数据库
         }
 
         private void Amount_modification_Click(object sender, EventArgs e)//修改金额的按钮
@@ -50,7 +66,8 @@ namespace ledger
 
         private void Add_Button_Click(object sender, EventArgs e)//添加条目的按钮
         {
-             AddRecord Form2 = new AddRecord();// 创建一个新的窗口实例
+            string labelContent = user_name.Text;//获取名字
+            AddRecord Form2 = new AddRecord(labelContent);// 创建一个新的窗口实例
 
             // 计算新窗口的位置
             int x = (Screen.PrimaryScreen.Bounds.Width - Form2.Width) / 2;
@@ -59,24 +76,9 @@ namespace ledger
             Form2.StartPosition = FormStartPosition.Manual;
             Form2.Location = new Point(x, y);
 
-            //传到xpenditure_box1的内容
-            Form2.DataAdded += (textbox1Content, textbox2Content, comboboxContent, dateTimeContent1) =>
-            {
-                string rowContent = $"{dateTimeContent1},{textbox1Content}, {textbox2Content}, {comboboxContent}"; // 将数据以逗号隔开拼接成一行内容
-                // 在事件处理程序中将一行内容添加到 expenditure_box 中
-                expenditure_box.Items.Add(rowContent);
-            };
-
-            //传到xpenditure_box2的内容
-            Form2.DataAdded2 += (textbox1Content2, textbox2Content2,dateTimeContent2) =>
-            {
-                string rowContent = $"{dateTimeContent2},{textbox1Content2}, {textbox2Content2}"; // 将数据以逗号隔开拼接成一行内容
-                // 在事件处理程序中将一行内容添加到 expenditure_box 中
-                income_box.Items.Add(rowContent);
-            };
             Form2.ShowDialog();// 显示新的窗口
 
-            // 在新窗口中查找名为 "tabControl1" 的 TabControl 控件
+            /*// 在新窗口中查找名为 "tabControl1" 的 TabControl 控件
             TabControl tabControl = Form2.Controls.Find("tabControl1", true).FirstOrDefault() as TabControl;
             // 如果找到了 TabControl 控件，则选择名为 "tabPage1" 的选项卡
             if (tabControl != null)
@@ -89,8 +91,21 @@ namespace ledger
                         break;
                     }
                 }
+            }*/
+            db.dbopen();//等待窗口关闭后,打开数据库更新数据
+            string[] tiaomu1 = db.rtn_expenditure_id_all("yzx");//更新条目1
+            string[] tiaomu2 = db.rtn_income_id_all("yzx");//更新条目2
+            expenditure_box.Items.Clear();//先清除条目1
+            income_box.Items.Clear();//先清除条目2
+            foreach (string item in tiaomu1)
+            {
+                expenditure_box.Items.Add(item); // 将数组中的每个元素添加为选项
             }
-
+            foreach (string item in tiaomu2)
+            {
+                income_box.Items.Add(item); // 将数组中的每个元素添加为选项
+            }
+            db.dbclose();
         }
 
         private void Delete_Button_Click(object sender, EventArgs e)//删除条目的按钮

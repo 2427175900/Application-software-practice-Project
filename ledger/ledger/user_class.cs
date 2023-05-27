@@ -62,7 +62,11 @@ namespace ledger
         public void insert_new(String name)
         {
             //创建一个新用户，名字为name
-            
+            /*
+            Random random = new Random();
+            int randomNumber = random.Next(0, 100);
+            String pk = name + randomNumber.ToString();
+           */
             String sql = $"INSERT INTO user_info (users_name, max_sum) VALUES ('{name}', 0)";
             execute_sql(sql);
 
@@ -117,7 +121,8 @@ namespace ledger
             //向收入表中插入新内容
             //需要输入 名字 日期 收入金额
 
-            String sql = $"INSERT INTO income (users_name, today_date, income_amount, income_note) VALUES ('{name}', '{today_date}', {amount}, 'None')";
+            String pk = today_date + " " + amount.ToString() + " " + "None";
+            String sql = $"INSERT INTO income (income_id, users_name, today_date, income_amount, income_note) VALUES ('{pk}', '{name}', '{today_date}', {amount}, 'None')";
             execute_sql (sql);
 
             return;
@@ -130,6 +135,10 @@ namespace ledger
             String sql = $"UPDATE income SET income_note='{note}' WHERE users_name='{name}' AND today_date='{today_date}'";
             execute_sql (sql);
 
+            String str = today_date + " " + rtn_income_amount(name, today_date).ToString() + " " + note;
+            String sql2 = $"UPDATE income SET income_id='{str}' WHERE users_name='{name}' AND today_date='{today_date}'";
+            execute_sql(sql2);
+
             return;
         }
 
@@ -139,7 +148,7 @@ namespace ledger
 
             String sql = $"SELECT income_amount FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
             DataTable dt = select_sql (sql);
-            int rtn = Convert.ToInt32(dt.Rows[0]["amount"]);
+            int rtn = Convert.ToInt32(dt.Rows[0]["income_amount"]);
 
             return rtn;
         }
@@ -150,9 +159,36 @@ namespace ledger
 
             String sql = $"SELECT income_note FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
             DataTable dt = select_sql(sql);
-            String rtn = dt.Rows[0]["note"].ToString();
+            String rtn = dt.Rows[0]["income_note"].ToString();
 
             return rtn;
+        }
+
+        public String rtn_income_id(String name, String today_date)
+        {
+            //返回收入的id
+
+            String sql = $"SELECT income_id FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
+            DataTable dt = select_sql(sql);
+            String rtn = dt.Rows[0]["income_id"].ToString();
+
+            return rtn;
+        }
+
+        public String[] rtn_income_id_all(String name)
+        {
+            //返回收入所有name的id 日期降序排列
+
+            String sql = $"SELECT income_id FROM income WHERE users_name='{name}' ORDER BY today_date DESC";
+            DataTable dt = select_sql(sql);
+
+            string[] dataArray = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = dt.Rows[i]["income_id"].ToString();
+            }
+
+            return dataArray;
         }
 
         public void del_income(String name, String today_date)
@@ -172,20 +208,24 @@ namespace ledger
             //向支出表中插入新内容
             //需要输入 名字 日期 类型
 
-            String pk = name + " "+ types + " " + today_date;
+            String pk = today_date + " " + 0 + " " + types + " ";
             String sql = $"INSERT INTO expenditure(expenditure_id, users_name, today_date, types, expenditure_amount, expenditure_note) VALUES('{pk}', '{name}', '{today_date}', '{types}', 0, 'None')";
             execute_sql(sql);
 
             return;
         }
 
-        public void update_exoenditure_amount(String name, String today_date, String types, int amount)
+        public void update_expenditure_amount(String name, String today_date, String types, int amount)
         {
             //更新支出表的具体金额
             //type eat = eating, tak = taking, med = medical, utb = utility_bill, oth = other
 
             String sql = $"UPDATE expenditure SET types='{types}', expenditure_amount={amount} WHERE users_name='{name}' AND today_date='{today_date}'";
-            execute_sql(sql); 
+            execute_sql(sql);
+
+            String str = today_date + " " + types + " " + amount.ToString() + " " + rtn_expenditure_note(name, today_date, types);
+            String sql2 = $"UPDATE expenditure SET expenditure_id='{str}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
+            execute_sql(sql2);
 
             return;
         }
@@ -198,9 +238,9 @@ namespace ledger
             int rtn;
             String sql;
 
-            sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}''";
+            sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             DataTable dt = select_sql(sql);
-            rtn = Convert.ToInt32(dt.Rows[0]["types"]);
+            rtn = Convert.ToInt32(dt.Rows[0]["expenditure_amount"]);
 
             return rtn;
         }
@@ -209,8 +249,12 @@ namespace ledger
         {
             //给 日期为today_date，用户为name，类型为types的支出条目更新 note
 
-            String sql = $"UPDATE expenditure SET income_note='{note}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
+            String sql = $"UPDATE expenditure SET expenditure_note='{note}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             execute_sql(sql);
+
+            String str = today_date + " " + types + " " + rtn_expenditure_amount(name, today_date, types).ToString() + " " + note;
+            String sql2 = $"UPDATE expenditure SET expenditure_id='{str}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
+            execute_sql(sql2);
 
             return;
         }
@@ -221,9 +265,36 @@ namespace ledger
 
             String sql = $"SELECT expenditure_note FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             DataTable dt = select_sql(sql);
-            String rtn = dt.Rows[0]["note"].ToString();
+            String rtn = dt.Rows[0]["expenditure_note"].ToString();
 
             return rtn;
+        }
+
+        public String rtn_expenditure_id(String name, String today_date, String types)
+        {
+            //返回支出的id
+
+            String sql = $"SELECT expenditure_id FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
+            DataTable dt = select_sql(sql);
+            String rtn = dt.Rows[0]["expenditure_id"].ToString();
+
+            return rtn;
+        }
+
+        public String[] rtn_expenditure_id_all(String name)
+        {
+            //返回收入的id,日期降序排列
+
+            String sql = $"SELECT expenditure_id FROM expenditure WHERE users_name='{name}' ORDER BY today_date DESC";
+            DataTable dt = select_sql(sql);
+
+            string[] dataArray = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = dt.Rows[i]["expenditure_id"].ToString();
+            }
+
+            return dataArray;
         }
 
         public void del_expenditure(String name, String today_date, String types)

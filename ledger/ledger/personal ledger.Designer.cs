@@ -59,6 +59,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.zongzhichu = new System.Windows.Forms.Label();
+            this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -166,13 +167,11 @@
             this.income_box.CheckOnClick = true;
             this.income_box.FormattingEnabled = true;
             this.income_box.Items.AddRange(new object[] {
-            "日期, 金额 ,备注2",
-            "日期, 金额 ,备注",
-            "日期, 金额 ,备注",
-            "日期, 金额 ,备注2",
-            "日期, 金额 ,备注",
-            "日期, 金额 ,备注2",
-            "日期, 金额 ,备注"});
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.income_box.Location = new System.Drawing.Point(416, 92);
             this.income_box.Name = "income_box";
             this.income_box.Size = new System.Drawing.Size(361, 214);
@@ -183,14 +182,13 @@
             this.expenditure_box.CheckOnClick = true;
             this.expenditure_box.FormattingEnabled = true;
             this.expenditure_box.Items.AddRange(new object[] {
-            "日期, 用途 , 金额 ,备注1",
-            "日期, 用途 , 金额 ,备注",
-            "日期, 用途 , 金额 ,备注1",
-            "日期, 用途 , 金额 ,备注",
-            "日期, 用途 , 金额 ,备注",
-            "日期, 用途 , 金额 ,备注1",
-            "日期, 用途 , 金额 ,备注",
-            "日期, 用途 , 金额 ,备注"});
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
             this.expenditure_box.Location = new System.Drawing.Point(21, 92);
             this.expenditure_box.Name = "expenditure_box";
             this.expenditure_box.Size = new System.Drawing.Size(361, 214);
@@ -396,6 +394,10 @@
             this.zongzhichu.TabIndex = 10;
             this.zongzhichu.Text = "xxx";
             // 
+            // sqLiteCommand1
+            // 
+            this.sqLiteCommand1.CommandText = null;
+            // 
             // personal_ledger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -457,5 +459,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label zongzhichu;
         private System.Windows.Forms.Label shangxian;
+        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
     }
 }

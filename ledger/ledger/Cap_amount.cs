@@ -29,7 +29,6 @@ namespace ledger
         {
             string textboxContent = textBox1.Text; // 获取 修改金额 文本框的内容
             db.dbopen();//打开数据库
-            //db.insert_new("yzx");添加一个yzx名字的账号测试
             db.update_max_sum(user_name, Convert.ToInt32(textboxContent));//修改数据库里对应名字 的 上限金额
             db.dbclose();
             this.Close(); // 关闭窗口2

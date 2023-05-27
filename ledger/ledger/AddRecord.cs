@@ -13,11 +13,14 @@ namespace ledger
 {
     public partial class AddRecord : Form
     {
-        public AddRecord()
+        string user_name; //用户名
+        public AddRecord(string labelContent)
         {
+            user_name = labelContent;//获取用户名
             InitializeComponent();
         }
 
+        database db = new database();//创建数据库的对象
         private void textbox_TM1_KeyPress(object sender, KeyPressEventArgs e)//禁止输入除了数字以外的其他东西
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -26,35 +29,66 @@ namespace ledger
             }
         }
 
-        private void textbox_TM2_KeyPress(object sender, KeyPressEventArgs e)
+        private void textbox_TM2_KeyPress(object sender, KeyPressEventArgs e)//禁止输入除了数字以外的其他东西
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
         }
-        public event Action<string, string, string, DateTime> DataAdded;//定义三个要传的东西
+
         private void sure1_Click(object sender, EventArgs e)
         {
-            string textbox1Content = textbox_TM1.Text; // 获取金额
-            string comboboxContent = yongtu.Text; // 获取用途
-            string textbox2Content = beizhu.Text; // 获取备注
-            DateTime dateTimeContent1 = dateTimePicker1.Value; // 获取日期选择器的时间
-
-            DataAdded?.Invoke(textbox1Content,comboboxContent,textbox2Content,dateTimeContent1); // 触发事件，并传递文本框、组合框和日期选择器内容
-            this.Close(); // 关闭窗口
+            if (string.IsNullOrEmpty(textbox_TM1.Text)) //判断有那哪个没填
+            {
+                // 文本框为空
+                MessageBox.Show("金额不能为空");
+            }
+            else
+            {
+                // 文本框不为空
+                if (yongtu.SelectedIndex == -1)
+                {
+                    // 未选择项
+                    MessageBox.Show("请选择用途");
+                }
+                else
+                {
+                    string textbox1Content = textbox_TM1.Text; // 获取金额
+                    string comboboxContent = yongtu.Text; // 获取用途
+                    string textbox2Content = beizhu.Text; // 获取备注
+                    DateTime dateTimeContent1 = dateTimePicker1.Value; // 获取日期选择器的时间
+                    //开始操作数据库
+                    db.dbopen();//打开数据库
+                    db.insert_new_expenditure(user_name, Convert.ToString(dateTimeContent1), comboboxContent);//写入 用户 时间 用途
+                    db.update_expenditure_amount(user_name, Convert.ToString(dateTimeContent1), comboboxContent, Convert.ToInt32(textbox1Content));//写入金额
+                    db.update_expenditure_note(user_name, Convert.ToString(dateTimeContent1), comboboxContent, textbox2Content);//写入备注
+                    db.dbclose();//关闭数据库
+                    this.Close(); // 关闭窗口
+                }
+            }
         }
 
-        public event Action<string, string, DateTime> DataAdded2;//定义两个要传的东西
         private void sure2_Click(object sender, EventArgs e)
         {
-            string textbox1Content2 = textbox_TM2.Text; // 获取金额2
-            string textbox2Content2 = beizhu2.Text; // 获取备注2
-            DateTime dateTimeContent2 = dateTimePicker2.Value; // 获取日期选择器的时间
 
-            DataAdded2?.Invoke(textbox1Content2,textbox2Content2, dateTimeContent2); // 触发事件，并传递文本框和组合框内容
-
-            this.Close(); // 关闭窗口
+            if (string.IsNullOrEmpty(textbox_TM2.Text)) //判断有那哪个没填
+            {
+                // 文本框为空
+                MessageBox.Show("金额不能为空");
+            }
+            else
+            {
+                string textbox1Content2 = textbox_TM2.Text; // 获取金额2
+                string textbox2Content2 = beizhu2.Text; // 获取备注2
+                DateTime dateTimeContent2 = dateTimePicker2.Value; // 获取日期选择器的时间
+                //开始操作数据库
+                db.dbopen();
+                db.insert_new_income(user_name, Convert.ToString(dateTimeContent2), Convert.ToInt32(textbox1Content2));//写入 用户 时间 收入
+                db.update_income_note(user_name, Convert.ToString(dateTimeContent2), textbox2Content2);//写入备注
+                db.dbclose();//关闭数据库
+                this.Close(); // 关闭窗口
+            }
         }
     }
 }
