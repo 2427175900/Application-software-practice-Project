@@ -11,8 +11,7 @@ CREATE TABLE user_info (
 
 --t2，收入，用户名，具体日期，日具体收入，日具体支出
 CREATE TABLE income (
-    income_rdm TEXT PRIMARY KEY,
-    income_id TEXT,
+    income_id TEXT PRIMARY KEY,
     users_name TEXT,
     today_date TEXT,
     income_amount INTEGER,
@@ -22,8 +21,7 @@ CREATE TABLE income (
 
 --t3，日期，具体用途收支
 CREATE TABLE expenditure (
-    expenditure_rdm TEXT PRIMARY KEY,
-    expenditure_id TEXT,
+    expenditure_id TEXT PRIMARY KEY,
     users_name TEXT,
     today_date TEXT,
     types TEXT,
