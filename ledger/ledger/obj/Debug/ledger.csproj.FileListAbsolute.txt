@@ -1,111 +1,25 @@
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe.config
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.pdb
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Form1.resources
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
-D:\github项目库\C#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddRecord.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.AddRecord.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.Form1.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.exe
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.pdb
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\ledger.exe.config
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\ledger.exe
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\ledger.pdb
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.xml
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.xml
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.CopyComplete
-C:\Users\admin\Desktop\Application-software-practice-Project-main 2\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.Cap_amount.resources
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe.config
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.pdb
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.dll
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.dll
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.xml
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.xml
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddRecord.resources
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Cap_amount.resources
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.MainForm.resources
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CopyComplete
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
-C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddUser.resources
-<<<<<<< Updated upstream
-=======
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\ledger.exe.config
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\ledger.exe
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\ledger.pdb
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.xml
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\bin\Debug\System.Data.SQLite.xml
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.AddRecord.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.AddUser.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.Cap_amount.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.MainForm.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.csproj.CopyComplete
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.exe
-C:\Users\admin\Desktop\Application-software-practice-Project-main\Application-software-practice-Project-main\ledger\ledger\obj\Debug\ledger.pdb
->>>>>>> Stashed changes
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddRecord.resources
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddUser.resources
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Cap_amount.resources
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.MainForm.resources
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe.config
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.pdb
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.dll
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.dll
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.EF6.dll
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.xml
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.xml
-C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CopyComplete
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe.config
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.exe
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\ledger.pdb
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.dll
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.SqlServer.dll
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.dll
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.EF6.dll
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.Linq.dll
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.xml
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\EntityFramework.SqlServer.xml
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\bin\Debug\System.Data.SQLite.xml
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.AssemblyReference.cache
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.SuggestedBindingRedirects.cache
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddRecord.resources
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.AddUser.resources
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Cap_amount.resources
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.MainForm.resources
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.personal_ledger.resources
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.Properties.Resources.resources
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.GenerateResource.cache
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CoreCompileInputs.cache
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.csproj.CopyComplete
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.exe
+E:\code_projects\c#\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.pdb

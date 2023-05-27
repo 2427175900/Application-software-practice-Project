@@ -18,7 +18,7 @@ namespace ledger
         //构造函数，连接数据库
         public database()
         {
-            String sqlname = "user_info.db";
+            String sqlname = "Data Source=user_info.db";
             this.conn = new SQLiteConnection(sqlname);
         }
 
@@ -60,7 +60,7 @@ namespace ledger
         public void insert_new(String name)
         {
             //创建一个新用户，名字为name
-
+            
             String sql = $"INSERT INTO user_info (users_name, max_sum) VALUES ('{name}', 0)";
             execute_sql(sql);
 

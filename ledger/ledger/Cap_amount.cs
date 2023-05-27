@@ -24,6 +24,13 @@ namespace ledger
         public event Action<string> TextUpdated;
         private void button1_Click(object sender, EventArgs e)  //确定按钮
         {
+
+            database db = new database();
+
+            db.dbopen();
+            db.insert_new("name1");
+            db.update_max_sum("name1", 2000);
+
             string textboxContent = textBox1.Text; // 获取文本框的内容
             TextUpdated?.Invoke(textboxContent); // 触发事件，并传递文本框内容
             this.Close(); // 关闭窗口2
