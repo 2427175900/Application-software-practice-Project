@@ -5,13 +5,15 @@ DROP TABLE expenditure;
 
 --t1，用户，上限金额
 CREATE TABLE user_info (
-    users_name TEXT PRIMARY KEY,
+    users_id TEXT PRIMARY KEY,
+    users_name TEXT,
     max_sum INTEGER
 );
 
 --t2，收入，用户名，具体日期，日具体收入，日具体支出
 CREATE TABLE income (
-    users_name TEXT PRIMARY KEY,
+    income_id TEXT PRIMARY KEY,
+    users_name TEXT,
     today_date TEXT,
     income_amount INTEGER,
     income_note TEXT,

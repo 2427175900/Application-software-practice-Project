@@ -62,8 +62,11 @@ namespace ledger
         public void insert_new(String name)
         {
             //创建一个新用户，名字为name
-            
-            String sql = $"INSERT INTO user_info (users_name, max_sum) VALUES ('{name}', 0)";
+
+            Random random = new Random();
+            int randomNumber = random.Next(0, 100);
+            String pk = name + randomNumber.ToString();
+            String sql = $"INSERT INTO user_info (users_id, users_name, max_sum) VALUES ('{pk}', '{name}', 0)";
             execute_sql(sql);
 
             return;
@@ -117,7 +120,8 @@ namespace ledger
             //向收入表中插入新内容
             //需要输入 名字 日期 收入金额
 
-            String sql = $"INSERT INTO income (users_name, today_date, income_amount, income_note) VALUES ('{name}', '{today_date}', {amount}, 'None')";
+            String pk = name + " " + today_date + " " + amount.ToString();
+            String sql = $"INSERT INTO income (income_id, users_name, today_date, income_amount, income_note) VALUES ('{pk}', '{name}', '{today_date}', {amount}, 'None')";
             execute_sql (sql);
 
             return;
