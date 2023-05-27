@@ -148,7 +148,7 @@ namespace ledger
 
             String sql = $"SELECT income_amount FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
             DataTable dt = select_sql (sql);
-            int rtn = Convert.ToInt32(dt.Rows[0]["amount"]);
+            int rtn = Convert.ToInt32(dt.Rows[0]["income_amount"]);
 
             return rtn;
         }
@@ -159,7 +159,7 @@ namespace ledger
 
             String sql = $"SELECT income_note FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
             DataTable dt = select_sql(sql);
-            String rtn = dt.Rows[0]["note"].ToString();
+            String rtn = dt.Rows[0]["income_note"].ToString();
 
             return rtn;
         }
@@ -213,7 +213,7 @@ namespace ledger
 
             sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}''";
             DataTable dt = select_sql(sql);
-            rtn = Convert.ToInt32(dt.Rows[0]["types"]);
+            rtn = Convert.ToInt32(dt.Rows[0]["expenditure_amount"]);
 
             return rtn;
         }
@@ -238,7 +238,7 @@ namespace ledger
 
             String sql = $"SELECT expenditure_note FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             DataTable dt = select_sql(sql);
-            String rtn = dt.Rows[0]["note"].ToString();
+            String rtn = dt.Rows[0]["expenditure_note"].ToString();
 
             return rtn;
         }
