@@ -121,7 +121,7 @@ namespace ledger
             //需要输入 名字 日期 收入金额
             Random r = new Random();
             int randomNumber = r.Next(-9999, 9999);
-            String rdm = name + r.ToString();
+            String rdm = name + randomNumber.ToString();
 
             String pk = today_date + " " + amount.ToString() + " " + "None";
             String sql = $"INSERT INTO income (income_rdm, income_id, users_name, today_date, income_amount, income_note) VALUES ('{rdm}', '{pk}', '{name}', '{today_date}', {amount}, 'None')";
@@ -253,7 +253,7 @@ namespace ledger
             //需要输入 名字 日期 类型
             Random r = new Random();
             int randomNumber = r.Next(-9999, 9999);
-            String rdm = name + r.ToString();
+            String rdm = name + randomNumber.ToString();
 
             String pk = today_date + " " + 0 + " " + types + " ";
             String sql = $"INSERT INTO expenditure(expenditure_rdm, expenditure_id, users_name, today_date, types, expenditure_amount, expenditure_note) VALUES('{rdm}', '{pk}', '{name}', '{today_date}', '{types}', 0, 'None')";
