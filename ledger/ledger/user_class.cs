@@ -164,6 +164,17 @@ namespace ledger
             return rtn;
         }
 
+        public String rtn_income_id(String name, String today_date)
+        {
+            //返回收入的id
+
+            String sql = $"SELECT income_id FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
+            DataTable dt = select_sql(sql);
+            String rtn = dt.Rows[0]["income_id"].ToString();
+
+            return rtn;
+        }
+
         public void del_income(String name, String today_date)
         {
             //删除用户 name 于日期today_date的行
@@ -211,7 +222,7 @@ namespace ledger
             int rtn;
             String sql;
 
-            sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}''";
+            sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             DataTable dt = select_sql(sql);
             rtn = Convert.ToInt32(dt.Rows[0]["expenditure_amount"]);
 
@@ -239,6 +250,17 @@ namespace ledger
             String sql = $"SELECT expenditure_note FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             DataTable dt = select_sql(sql);
             String rtn = dt.Rows[0]["expenditure_note"].ToString();
+
+            return rtn;
+        }
+
+        public String rtn_expenditure_id(String name, String today_date, String types)
+        {
+            //返回支出的id
+
+            String sql = $"SELECT expenditure_id FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
+            DataTable dt = select_sql(sql);
+            String rtn = dt.Rows[0]["expenditure_id"].ToString();
 
             return rtn;
         }
