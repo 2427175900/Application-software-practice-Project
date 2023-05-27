@@ -271,6 +271,24 @@ namespace ledger
             return rtn;
         }
 
+        public int[] rtn_expenditure_amount_type(String name, String types)
+        {
+            //返回具体支出金额
+            //type eat = eating, tak = taking, med = medical, utb = utility_bill, oth = other
+
+            String sql;
+
+            sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND types='{types}'";
+            DataTable dt = select_sql(sql);
+            int[] dataArray = new int[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = Convert.ToInt32(dt.Rows[i]["expenditure_amount"]);
+            }
+
+            return dataArray;
+        }
+
         public int[] rtn_expenditure_amount_all(String name)
         {
             //返回 名字为name的全部支出金额
