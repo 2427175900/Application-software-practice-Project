@@ -20,7 +20,7 @@ CREATE TABLE income (
 
 --t3，日期，具体用途收支
 CREATE TABLE expenditure (
-    expenditure_id INT PRIMARY KEY,
+    expenditure_id TEXT PRIMARY KEY,
     users_name TEXT,
     today_date TEXT,
     types TEXT,

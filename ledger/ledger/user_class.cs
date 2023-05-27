@@ -172,7 +172,8 @@ namespace ledger
             //向支出表中插入新内容
             //需要输入 名字 日期 类型
 
-            String sql = $"INSERT INTO expenditure(users_name, today_date, types, expenditure_amount, expenditure_note) VALUES('{name}', '{today_date}', '{types}', 0, 'None')";
+            String pk = name + " "+ types + " " + today_date;
+            String sql = $"INSERT INTO expenditure(expenditure_id, users_name, today_date, types, expenditure_amount, expenditure_note) VALUES('{pk}', '{name}', '{today_date}', '{types}', 0, 'None')";
             execute_sql(sql);
 
             return;
