@@ -175,6 +175,22 @@ namespace ledger
             return rtn;
         }
 
+        public String[] rtn_income_id_all(String name)
+        {
+            //返回收入所有name的id 日期降序排列
+
+            String sql = $"SELECT income_id FROM income WHERE users_name='{name}' ORDER BY today_date DESC";
+            DataTable dt = select_sql(sql);
+
+            string[] dataArray = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = dt.Rows[i]["columnName"].ToString();
+            }
+
+            return dataArray;
+        }
+
         public void del_income(String name, String today_date)
         {
             //删除用户 name 于日期today_date的行
@@ -263,6 +279,22 @@ namespace ledger
             String rtn = dt.Rows[0]["expenditure_id"].ToString();
 
             return rtn;
+        }
+
+        public String[] rtn_expenditure_id_all(String name)
+        {
+            //返回收入的id,日期降序排列
+
+            String sql = $"SELECT expenditure_id FROM income WHERE users_name='{name}' ORDER BY today_date DESC";
+            DataTable dt = select_sql(sql);
+
+            string[] dataArray = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = dt.Rows[i]["columnName"].ToString();
+            }
+
+            return dataArray;
         }
 
         public void del_expenditure(String name, String today_date, String types)
