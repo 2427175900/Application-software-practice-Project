@@ -185,7 +185,7 @@ namespace ledger
             string[] dataArray = new string[dt.Rows.Count];
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                dataArray[i] = dt.Rows[i]["columnName"].ToString();
+                dataArray[i] = dt.Rows[i]["income_id"].ToString();
             }
 
             return dataArray;
@@ -273,7 +273,6 @@ namespace ledger
         public String rtn_expenditure_id(String name, String today_date, String types)
         {
             //返回支出的id
-
             String sql = $"SELECT expenditure_id FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             DataTable dt = select_sql(sql);
             String rtn = dt.Rows[0]["expenditure_id"].ToString();
@@ -285,13 +284,13 @@ namespace ledger
         {
             //返回收入的id,日期降序排列
 
-            String sql = $"SELECT expenditure_id FROM income WHERE users_name='{name}' ORDER BY today_date DESC";
+            String sql = $"SELECT expenditure_id FROM expenditure WHERE users_name='{name}' ORDER BY today_date DESC";
             DataTable dt = select_sql(sql);
 
             string[] dataArray = new string[dt.Rows.Count];
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                dataArray[i] = dt.Rows[i]["columnName"].ToString();
+                dataArray[i] = dt.Rows[i]["expenditure_id"].ToString();
             }
 
             return dataArray;
