@@ -121,7 +121,7 @@ namespace ledger
             //向收入表中插入新内容
             //需要输入 名字 日期 收入金额
 
-            String pk = name + " " + today_date + " " + amount.ToString();
+            String pk = today_date + " " + amount.ToString() + " " + "None";
             String sql = $"INSERT INTO income (income_id, users_name, today_date, income_amount, income_note) VALUES ('{pk}', '{name}', '{today_date}', {amount}, 'None')";
             execute_sql (sql);
 
@@ -134,6 +134,10 @@ namespace ledger
 
             String sql = $"UPDATE income SET income_note='{note}' WHERE users_name='{name}' AND today_date='{today_date}'";
             execute_sql (sql);
+
+            String str = today_date + " " + rtn_income_amount(name, today_date).ToString() + " " + note;
+            String sql2 = $"UPDATE income SET income_id='{str}' WHERE users_name='{name}' AND today_date='{today_date}'";
+            execute_sql(sql2);
 
             return;
         }
@@ -177,7 +181,7 @@ namespace ledger
             //向支出表中插入新内容
             //需要输入 名字 日期 类型
 
-            String pk = name + " "+ types + " " + today_date;
+            String pk = today_date + " " + 0 + " " + types + " ";
             String sql = $"INSERT INTO expenditure(expenditure_id, users_name, today_date, types, expenditure_amount, expenditure_note) VALUES('{pk}', '{name}', '{today_date}', '{types}', 0, 'None')";
             execute_sql(sql);
 
@@ -190,7 +194,11 @@ namespace ledger
             //type eat = eating, tak = taking, med = medical, utb = utility_bill, oth = other
 
             String sql = $"UPDATE expenditure SET types='{types}', expenditure_amount={amount} WHERE users_name='{name}' AND today_date='{today_date}'";
-            execute_sql(sql); 
+            execute_sql(sql);
+
+            String str = today_date + " " + types + " " + amount.ToString() + " " + rtn_expenditure_note(name, today_date, types);
+            String sql2 = $"UPDATE expenditure SET expenditure_id='{str}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
+            execute_sql(sql2);
 
             return;
         }
@@ -216,6 +224,10 @@ namespace ledger
 
             String sql = $"UPDATE expenditure SET expenditure_note='{note}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             execute_sql(sql);
+
+            String str = today_date + " " + types + " " + rtn_expenditure_amount(name, today_date, types).ToString() + " " + note;
+            String sql2 = $"UPDATE expenditure SET expenditure_id='{str}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
+            execute_sql(sql2);
 
             return;
         }
