@@ -184,7 +184,7 @@ namespace ledger
             return;
         }
 
-        public void update_exoenditure_amount(String name, String today_date, String types, int amount)
+        public void update_expenditure_amount(String name, String today_date, String types, int amount)
         {
             //更新支出表的具体金额
             //type eat = eating, tak = taking, med = medical, utb = utility_bill, oth = other
