@@ -23,7 +23,7 @@ namespace ledger
         private void personal_ledger_Load(object sender, EventArgs e)//在窗口打开的时候更新数据
         {
             db.dbopen();//等待窗口关闭后,打开数据库更新数据
-            //db.insert_new("yzx");  测试的时候添加的用户
+            //db.insert_new("yzx");  //测试的时候添加的用户
             int sum = db.rtn_max_sum("yzx");//根据名字找上限金额                      跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
             shangxian.Text = Convert.ToString(sum);//修改显示的lable
             db.dbclose();
@@ -110,12 +110,5 @@ namespace ledger
                 }
             }
         }
-
-        private void 上限金额_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }
