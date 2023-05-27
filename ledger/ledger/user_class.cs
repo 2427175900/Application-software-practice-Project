@@ -256,7 +256,7 @@ namespace ledger
             String rdm = name + r.ToString();
 
             String pk = today_date + " " + 0 + " " + types + " ";
-            String sql = $"INSERT INTO expenditure(expenditure_id, users_name, today_date, types, expenditure_amount, expenditure_note) VALUES('{rdm}', '{pk}', '{name}', '{today_date}', '{types}', 0, 'None')";
+            String sql = $"INSERT INTO expenditure(expenditure_rdm, expenditure_id, users_name, today_date, types, expenditure_amount, expenditure_note) VALUES('{rdm}', '{pk}', '{name}', '{today_date}', '{types}', 0, 'None')";
             execute_sql(sql);
 
             return;
