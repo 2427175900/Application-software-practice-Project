@@ -20,6 +20,8 @@ namespace ledger
         {
             String sqlname = "Data Source=user_info.db";
             this.conn = new SQLiteConnection(sqlname);
+            SQLiteCommand cmd = new SQLiteCommand("PRAGMA foreign_keys = ON", this.conn);
+            cmd.ExecuteNonQuery();
         }
 
         //打开数据库
@@ -77,7 +79,7 @@ namespace ledger
             return;
         }
 
-        public int get_max_sum(String name)
+        public int rtn_max_sum(String name)
         {
             //返回用户name的上限金额
 
@@ -86,6 +88,27 @@ namespace ledger
            int i = Convert.ToInt32(dt.Rows[0]["max_sum"]);
 
             return i;
+        }
+
+        public string rtn_name(String name)
+        {
+            //返回名字
+
+            String sql = $"SELECT users_name FROM user_info WHERE users_name='{name}'";
+            DataTable dt = select_sql(sql);
+            String rtn = dt.Rows[0]["uusers_name"].ToString();
+
+            return rtn;
+        }
+
+        public void del_user(String name)
+        {
+            //删除一个用户的所有信息
+
+            String sql = $"DELETE FROM user_info WHERE users_name='{name}'";
+            execute_sql(sql);
+
+            return;
         }
 
         //t2操作
@@ -132,7 +155,18 @@ namespace ledger
             return rtn;
         }
 
-        //t3 支出表
+        public void del_income(String name, String today_date)
+        {
+            //删除用户 name 于日期today_date的行
+
+            String sql = $"DELETE FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
+            execute_sql(sql);
+
+            return;
+        }
+
+
+        //t3 操作
         public void insert_new_expenditure(String name, String today_date)
         {
             //向支出表中插入新内容
@@ -242,11 +276,21 @@ namespace ledger
         {
             //返回 日期为today_date名字为name的note 支出
 
-            String sql = $"SELECT expenditure_note FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
+            String sql = $"SELECT expenditure_note FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}'";
             DataTable dt = select_sql(sql);
             String rtn = dt.Rows[0]["note"].ToString();
 
             return rtn;
+        }
+
+        public void del_expenditure(String name, String today_date)
+        {
+            //删除用户 name 于日期today_date的行
+
+            String sql = $"DELETE FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}'";
+            execute_sql(sql);
+
+            return;
         }
     }
 }

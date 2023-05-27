@@ -30,3 +30,5 @@ CREATE TABLE expenditure (
     expenditure_noate TEXT,
     FOREIGN KEY (users_name) REFERENCES user_info (users_name)
 );
+
+DELETE FROM user_info WHERE users_name='{name}';
