@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ledger
 {
@@ -17,22 +19,33 @@ namespace ledger
             InitializeComponent();
         }
 
+        database db = new database();//创建一个数据库的对象
+        private void personal_ledger_Load(object sender, EventArgs e)//在窗口打开的时候更新数据
+        {
+            db.dbopen();//等待窗口关闭后,打开数据库更新数据
+            //db.insert_new("yzx");  测试的时候添加的用户
+            int sum = db.rtn_max_sum("yzx");//根据名字找上限金额                      跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
+            shangxian.Text = Convert.ToString(sum);//修改显示的lable
+            db.dbclose();
+        }
+
         private void Amount_modification_Click(object sender, EventArgs e)//修改金额的按钮
         {
-            Cap_amount form2 = new Cap_amount();//建一个新窗口
+            string labelContent = user_name.Text;//获取名字
+            Cap_amount form2 = new Cap_amount(labelContent);//建一个修改金额的窗口,把用户名字传过去
+
             // 设置新窗口的位置
             int x = (Screen.PrimaryScreen.Bounds.Width - form2.Width) / 2;
             int y = (Screen.PrimaryScreen.Bounds.Height - form2.Height) / 2;
             form2.StartPosition = FormStartPosition.Manual;
             form2.Location = new Point(x, y);
 
-            //从Cap_amount窗口往personal_ledger窗口传"上限的值"
-            form2.TextUpdated += (content) =>
-            {
-                // 在事件处理程序中更新窗口1的标签
-                shangxian.Text = content;
-            };
-            form2.ShowDialog(); // 显示新的窗口2，并等待其关闭
+            form2.ShowDialog();//显示修改金额的窗口的,并等待关闭
+
+            db.dbopen();//等待窗口关闭后,打开数据库更新数据
+            int sum = db.rtn_max_sum(labelContent);//根据名字找上限金额
+            shangxian.Text = Convert.ToString(sum);//修改显示的lable
+            db.dbclose();
         }
 
         private void Add_Button_Click(object sender, EventArgs e)//添加条目的按钮
@@ -97,5 +110,12 @@ namespace ledger
                 }
             }
         }
+
+        private void 上限金额_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

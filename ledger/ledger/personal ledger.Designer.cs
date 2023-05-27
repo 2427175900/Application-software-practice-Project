@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.user_name = new System.Windows.Forms.Label();
             this.上限金额 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.shangxian = new System.Windows.Forms.Label();
@@ -73,15 +73,15 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(172, 26);
             this.dateTimePicker1.TabIndex = 0;
             // 
-            // label1
+            // user_name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gulim", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(24, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "用户 名称";
+            this.user_name.AutoSize = true;
+            this.user_name.Font = new System.Drawing.Font("Gulim", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.user_name.Location = new System.Drawing.Point(24, 21);
+            this.user_name.Name = "user_name";
+            this.user_name.Size = new System.Drawing.Size(58, 29);
+            this.user_name.TabIndex = 1;
+            this.user_name.Text = "yzx";
             // 
             // 上限金额
             // 
@@ -92,6 +92,7 @@
             this.上限金额.Size = new System.Drawing.Size(114, 24);
             this.上限金额.TabIndex = 2;
             this.上限金额.Text = "上限金额:";
+            this.上限金额.Click += new System.EventHandler(this.上限金额_Click);
             // 
             // groupBox1
             // 
@@ -405,11 +406,12 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.user_name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "personal_ledger";
             this.Text = "personal_ledger";
+            this.Load += new System.EventHandler(this.personal_ledger_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -426,7 +428,7 @@
         #endregion
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label user_name;
         private System.Windows.Forms.Label 上限金额;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Amount_modification;
