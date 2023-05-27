@@ -153,6 +153,22 @@ namespace ledger
             return rtn;
         }
 
+        public int[] rtn_income_amount_all(String name)
+        {
+            //返回 名字为name的全部收入金额
+
+            String sql = $"SELECT income_amount FROM income WHERE users_name='{name}'";
+            DataTable dt = select_sql(sql);
+
+            int[] dataArray = new int[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = Convert.ToInt32(dt.Rows[i]["income_amount"]);
+            }
+
+            return dataArray;
+        }
+
         public String rtn_income_note(String name, String today_date)
         {
             //返回 日期为today_date名字为name的note
@@ -253,6 +269,22 @@ namespace ledger
             rtn = Convert.ToInt32(dt.Rows[0]["expenditure_amount"]);
 
             return rtn;
+        }
+
+        public int[] rtn_expenditure_amount_all(String name)
+        {
+            //返回 名字为name的全部支出金额
+
+            String sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}'";
+            DataTable dt = select_sql(sql);
+
+            int[] dataArray = new int[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = Convert.ToInt32(dt.Rows[i]["expenditure_amount"]);
+            }
+
+            return dataArray;
         }
 
         public void update_expenditure_note(String name, String today_date, String types, String note)
