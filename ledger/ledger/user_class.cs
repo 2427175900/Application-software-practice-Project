@@ -7,7 +7,6 @@ using System.Data.SQLite;
 using System.Data;
 using System.Data.Entity.Spatial;
 using System.Xml.Linq;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ledger
 {
@@ -100,7 +99,7 @@ namespace ledger
 
             String sql = $"SELECT users_name FROM user_info WHERE users_name='{name}'";
             DataTable dt = select_sql(sql);
-            String rtn = dt.Rows[0]["uusers_name"].ToString();
+            String rtn = dt.Rows[0]["users_name"].ToString();
 
             return rtn;
         }
@@ -193,9 +192,9 @@ namespace ledger
 
         public String[] rtn_income_id_two_inp(String name, String today_date)
         {
-            //返回收入所有name的id 日期降序排列
+            //返回 收入 日期today_date所有name的id 
 
-            String sql = $"SELECT income_id FROM income WHERE users_name='{name}' today_date='{today_date}'";
+            String sql = $"SELECT income_id FROM income WHERE users_name='{name}' AND today_date='{today_date}'";
             DataTable dt = select_sql(sql);
 
             string[] dataArray = new string[dt.Rows.Count];
@@ -358,7 +357,7 @@ namespace ledger
 
         public String[] rtn_expenditure_id_two_inp(String name, String today_date)
         {
-            //返回支出的id
+            //返回支出的id 传参name和日期today_date
             String sql = $"SELECT expenditure_id FROM expenditure WHERE users_name='{name}' AND today_date='{today_date}'";
             DataTable dt = select_sql(sql);
             string[] dataArray = new string[dt.Rows.Count];
