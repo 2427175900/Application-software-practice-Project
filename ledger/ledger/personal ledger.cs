@@ -145,20 +145,6 @@ namespace ledger
 
             Form2.ShowDialog();// 显示新的窗口
 
-            /*// 在新窗口中查找名为 "tabControl1" 的 TabControl 控件
-            TabControl tabControl = Form2.Controls.Find("tabControl1", true).FirstOrDefault() as TabControl;
-            // 如果找到了 TabControl 控件，则选择名为 "tabPage1" 的选项卡
-            if (tabControl != null)
-            {
-                foreach (TabPage tabPage in tabControl.TabPages)
-                {
-                    if (tabPage.Name == "tabPage1")
-                    {
-                        tabControl.SelectedTab = tabPage;
-                        break;
-                    }
-                }
-            }*/
             db.dbopen();//等待窗口关闭后,打开数据库更新数据
             string[] tiaomu1 = db.rtn_expenditure_id_all("yzx");//更新条目1
             string[] tiaomu2 = db.rtn_income_id_all("yzx");//更新条目2
@@ -349,9 +335,10 @@ namespace ledger
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)//根据日期筛选条目
         {
             DateTime selectedDateTime = dateTimePicker1.Value;
-            DateTime dateOnly = selectedDateTime.Date;
+            string formattedDateTime = selectedDateTime.ToString("yyyy-MM-dd");
+
             db.dbopen();
-            string[] riqitiaomu = db.rtn_expenditure_id_two_inp("yzx", Convert.ToString(dateOnly));   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!! 
+            string[] riqitiaomu = db.rtn_expenditure_id_two_inp("yzx", Convert.ToString(formattedDateTime));   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!! 
 
             expenditure_box.Items.Clear();//先清除expenditure_box.Items,再重新重数据库中遍历
 
@@ -360,7 +347,7 @@ namespace ledger
                 expenditure_box.Items.Add(item); // 将数组中的每个元素添加为选项
             }
 
-            string[] riqitiaomu2 = db.rtn_income_id_two_inp("yzx", Convert.ToString(dateOnly));   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!! 
+            string[] riqitiaomu2 = db.rtn_income_id_two_inp("yzx", Convert.ToString(formattedDateTime));   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!! 
             income_box.Items.Clear();//先清除expenditure_box.Items,再重新重数据库中遍历
             foreach (string item in riqitiaomu2)//遍历写进items
             {
