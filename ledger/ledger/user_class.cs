@@ -193,7 +193,7 @@ namespace ledger
             //向支出表中插入新内容
             //需要输入 名字 日期 类型
 
-            String pk = today_date + " " + 0 + " " + types + " " + note;
+            String pk = today_date + " " + amount.ToString() + " " + types + " " + note;
             String sql = $"INSERT INTO expenditure(expenditure_id, users_name, today_date, types, expenditure_amount, expenditure_note) VALUES('{pk}', '{name}', '{today_date}', '{types}', {amount}, '{note}')";
             execute_sql(sql);
 
