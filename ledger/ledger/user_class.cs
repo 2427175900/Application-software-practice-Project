@@ -214,7 +214,7 @@ namespace ledger
         {
             //给 日期为today_date，用户为name，类型为types的支出条目更新 note
 
-            String sql = $"UPDATE expenditure SET income_note='{note}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
+            String sql = $"UPDATE expenditure SET expenditure_note='{note}' WHERE users_name='{name}' AND today_date='{today_date}' AND types='{types}'";
             execute_sql(sql);
 
             return;
