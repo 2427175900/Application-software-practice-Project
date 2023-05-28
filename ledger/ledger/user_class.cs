@@ -225,7 +225,6 @@ namespace ledger
         public int[] rtn_expenditure_amount_type_with_date(String name, String types, String today_date)
         {
             //返回具体支出金额 需要日期搜索 日期输入格式"yyyy-MM"
-            //type eat = eating, tak = taking, med = medical, utb = utility_bill, oth = other
 
             String sql;
 
