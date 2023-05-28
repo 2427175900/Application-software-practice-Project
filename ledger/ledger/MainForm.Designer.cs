@@ -44,6 +44,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.usersmaxsum = new System.Windows.Forms.Label();
             this.dltUser = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -152,15 +154,16 @@
             // mouthsum
             // 
             this.mouthsum.AutoSize = true;
-            this.mouthsum.Font = new System.Drawing.Font("굴림", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mouthsum.Location = new System.Drawing.Point(40, 54);
+            this.mouthsum.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mouthsum.Location = new System.Drawing.Point(6, 54);
             this.mouthsum.Name = "mouthsum";
-            this.mouthsum.Size = new System.Drawing.Size(112, 35);
+            this.mouthsum.Size = new System.Drawing.Size(69, 24);
             this.mouthsum.TabIndex = 0;
             this.mouthsum.Text = "label1";
             // 
             // groupBox2
             // 
+            this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.usersmaxsum);
             this.groupBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox2.Location = new System.Drawing.Point(242, 12);
@@ -173,10 +176,10 @@
             // usersmaxsum
             // 
             this.usersmaxsum.AutoSize = true;
-            this.usersmaxsum.Font = new System.Drawing.Font("굴림", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.usersmaxsum.Location = new System.Drawing.Point(40, 54);
+            this.usersmaxsum.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.usersmaxsum.Location = new System.Drawing.Point(6, 54);
             this.usersmaxsum.Name = "usersmaxsum";
-            this.usersmaxsum.Size = new System.Drawing.Size(112, 35);
+            this.usersmaxsum.Size = new System.Drawing.Size(69, 24);
             this.usersmaxsum.TabIndex = 0;
             this.usersmaxsum.Text = "label2";
             // 
@@ -191,6 +194,20 @@
             this.dltUser.UseVisualStyleBackColor = true;
             this.dltUser.Click += new System.EventHandler(this.dltUser_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(242, 22);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(194, 125);
+            this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(10, 17);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(191, 130);
+            this.panel2.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -202,6 +219,8 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Main";
@@ -211,6 +230,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -232,6 +252,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label usersmaxsum;
         private System.Windows.Forms.Button dltUser;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

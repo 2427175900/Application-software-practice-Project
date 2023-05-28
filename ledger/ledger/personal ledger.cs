@@ -20,6 +20,7 @@ namespace ledger
         public personal_ledger(string username)
         {
             us_name = username;
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 

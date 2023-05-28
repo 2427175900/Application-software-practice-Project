@@ -121,7 +121,7 @@ namespace ledger
             int usersmouthmaxsum = 0;
             for (int i = 0; i < maxsum.Length; i++)
             {
-                usersmouthmaxsum += sum[i];
+                usersmouthmaxsum += maxsum[i];
             }
             usersmaxsum.Text = usersmouthmaxsum.ToString();
 
@@ -195,7 +195,11 @@ namespace ledger
                 // 使用 name 进行进一步的操作
             }
             personal_ledger p = new personal_ledger(username);
-            p.Show();
+            TemporarilyClose();
+            p.ShowDialog();
+
+            Reopen();
+            PerformCustomLogic();
         }
 
 
