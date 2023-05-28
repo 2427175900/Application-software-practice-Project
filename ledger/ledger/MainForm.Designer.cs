@@ -117,7 +117,7 @@
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "공과금";
+            this.columnHeader7.Text = "생황";
             this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader7.Width = 80;
             // 
@@ -139,6 +139,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
