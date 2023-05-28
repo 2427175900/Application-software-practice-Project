@@ -39,6 +39,12 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mouthsum = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.usersmaxsum = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -47,8 +53,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 73);
             this.button1.TabIndex = 0;
-            this.button1.Text = "들로가기";
+            this.button1.Text = "들어가기";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAddUser
             // 
@@ -71,6 +78,7 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
+            this.listView1.Font = new System.Drawing.Font("함초롬바탕 확장", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 229);
             this.listView1.Name = "listView1";
@@ -127,11 +135,53 @@
             this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader8.Width = 80;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.mouthsum);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "당월 총지출";
+            // 
+            // mouthsum
+            // 
+            this.mouthsum.AutoSize = true;
+            this.mouthsum.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mouthsum.Location = new System.Drawing.Point(59, 40);
+            this.mouthsum.Name = "mouthsum";
+            this.mouthsum.Size = new System.Drawing.Size(69, 24);
+            this.mouthsum.TabIndex = 0;
+            this.mouthsum.Text = "label1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.usersmaxsum);
+            this.groupBox2.Location = new System.Drawing.Point(248, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "제한 금액";
+            // 
+            // usersmaxsum
+            // 
+            this.usersmaxsum.AutoSize = true;
+            this.usersmaxsum.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.usersmaxsum.Location = new System.Drawing.Point(59, 40);
+            this.usersmaxsum.Name = "usersmaxsum";
+            this.usersmaxsum.Size = new System.Drawing.Size(69, 24);
+            this.usersmaxsum.TabIndex = 0;
+            this.usersmaxsum.Text = "label2";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.button1);
@@ -139,7 +189,11 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Main";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -157,6 +211,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label mouthsum;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label usersmaxsum;
     }
 }
 

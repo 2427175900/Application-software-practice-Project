@@ -33,6 +33,7 @@ namespace ledger
         private void AddUser_FormClosing(object sender, FormClosingEventArgs e)
         {
            db.dbclose();
+           
         }
 
         //点击按钮的时候 把 name  插入到数据库
