@@ -93,15 +93,19 @@ namespace ledger
             return i;
         }
 
-        public string rtn_name(String name)
+        public string[] rtn_name()
         {
-            //返回名字
+            //返回所有名字
 
-            String sql = $"SELECT users_name FROM user_info WHERE users_name='{name}'";
+            String sql = $"SELECT users_name FROM user_info";
             DataTable dt = select_sql(sql);
-            String rtn = dt.Rows[0]["users_name"].ToString();
+            string[] dataArray = new string[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = dt.Rows[i]["users_name"].ToString();
+            }
 
-            return rtn;
+            return dataArray;
         }
 
         public void del_user(String name)
