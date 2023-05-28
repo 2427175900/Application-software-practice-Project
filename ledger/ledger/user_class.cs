@@ -222,6 +222,24 @@ namespace ledger
             return dataArray;
         }
 
+        public int[] rtn_expenditure_amount_type_with_date(String name, String types, String today_date)
+        {
+            //返回具体支出金额 需要日期搜索 日期输入格式"yyyy-MM"
+            //type eat = eating, tak = taking, med = medical, utb = utility_bill, oth = other
+
+            String sql;
+
+            sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND types='{types}' AND today_date LIKE '%{today_date}%'";
+            DataTable dt = select_sql(sql);
+            int[] dataArray = new int[dt.Rows.Count];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dataArray[i] = Convert.ToInt32(dt.Rows[i]["expenditure_amount"]);
+            }
+
+            return dataArray;
+        }
+
         public int[] rtn_expenditure_amount_all(String name)
         {
             //返回 名字为name的全部支出金额
@@ -240,7 +258,7 @@ namespace ledger
 
         public String[] rtn_expenditure_id_two_inp(String name, String today_date)
         {
-            //返回支出的id 传参name和日期today_date
+            //返回支出的id 传参name和日期today_date, 依据月份分类输入日期格式"yyyy-MM"即可
             String sql = $"SELECT expenditure_id FROM expenditure WHERE users_name='{name}' AND today_date LIKE '%{today_date}%'";
             DataTable dt = select_sql(sql);
             string[] dataArray = new string[dt.Rows.Count];
