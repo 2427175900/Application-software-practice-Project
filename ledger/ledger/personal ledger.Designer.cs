@@ -35,6 +35,7 @@
             this.shangxian = new System.Windows.Forms.Label();
             this.Amount_modification = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chushihuariqi = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.income_box = new System.Windows.Forms.CheckedListBox();
@@ -60,7 +61,6 @@
             this.labelzongshouru = new System.Windows.Forms.Label();
             this.labelzongzhichu = new System.Windows.Forms.Label();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
-            this.chushihuariqi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -69,18 +69,20 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(604, 25);
+            this.dateTimePicker1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(705, 25);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(172, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker1.TabIndex = 0;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // user_name
             // 
             this.user_name.AutoSize = true;
-            this.user_name.Font = new System.Drawing.Font("Gulim", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.user_name.Location = new System.Drawing.Point(24, 21);
+            this.user_name.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.user_name.Location = new System.Drawing.Point(28, 21);
+            this.user_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.user_name.Name = "user_name";
             this.user_name.Size = new System.Drawing.Size(58, 29);
             this.user_name.TabIndex = 1;
@@ -89,30 +91,34 @@
             // 上限金额
             // 
             this.上限金额.AutoSize = true;
-            this.上限金额.Font = new System.Drawing.Font("Gulim", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.上限金额.Location = new System.Drawing.Point(8, 18);
+            this.上限金额.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.上限金额.Location = new System.Drawing.Point(9, 18);
+            this.上限金额.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.上限金额.Name = "上限金额";
             this.上限金额.Size = new System.Drawing.Size(114, 24);
             this.上限金额.TabIndex = 2;
-            this.上限金额.Text = "上限金额:";
+            this.上限金额.Text = "제한금액:";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.shangxian);
             this.groupBox1.Controls.Add(this.Amount_modification);
             this.groupBox1.Controls.Add(this.上限金额);
-            this.groupBox1.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 54);
+            this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Location = new System.Drawing.Point(20, 54);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(171, 136);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(200, 136);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // shangxian
             // 
             this.shangxian.AutoSize = true;
-            this.shangxian.Font = new System.Drawing.Font("Gulim", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.shangxian.Location = new System.Drawing.Point(17, 56);
+            this.shangxian.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.shangxian.Location = new System.Drawing.Point(20, 56);
+            this.shangxian.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.shangxian.Name = "shangxian";
             this.shangxian.Size = new System.Drawing.Size(57, 20);
             this.shangxian.TabIndex = 4;
@@ -120,12 +126,13 @@
             // 
             // Amount_modification
             // 
-            this.Amount_modification.Font = new System.Drawing.Font("Gulim", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Amount_modification.Location = new System.Drawing.Point(6, 89);
+            this.Amount_modification.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Amount_modification.Location = new System.Drawing.Point(7, 89);
+            this.Amount_modification.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Amount_modification.Name = "Amount_modification";
-            this.Amount_modification.Size = new System.Drawing.Size(112, 41);
+            this.Amount_modification.Size = new System.Drawing.Size(131, 41);
             this.Amount_modification.TabIndex = 3;
-            this.Amount_modification.Text = "修改金额";
+            this.Amount_modification.Text = "수정";
             this.Amount_modification.UseVisualStyleBackColor = true;
             this.Amount_modification.Click += new System.EventHandler(this.Amount_modification_Click);
             // 
@@ -139,31 +146,46 @@
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.Delete_Button);
             this.groupBox2.Controls.Add(this.Add_Button);
-            this.groupBox2.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox2.Location = new System.Drawing.Point(17, 200);
+            this.groupBox2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox2.Location = new System.Drawing.Point(20, 200);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(806, 330);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox2.Size = new System.Drawing.Size(940, 330);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "账单";
+            this.groupBox2.Text = "장부";
+            // 
+            // chushihuariqi
+            // 
+            this.chushihuariqi.Location = new System.Drawing.Point(509, 25);
+            this.chushihuariqi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.chushihuariqi.Name = "chushihuariqi";
+            this.chushihuariqi.Size = new System.Drawing.Size(174, 25);
+            this.chushihuariqi.TabIndex = 7;
+            this.chushihuariqi.Text = "전제 보기";
+            this.chushihuariqi.UseVisualStyleBackColor = true;
+            this.chushihuariqi.Click += new System.EventHandler(this.chushihuariqi_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(416, 63);
+            this.label4.Location = new System.Drawing.Point(485, 63);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 16);
             this.label4.TabIndex = 6;
-            this.label4.Text = "收入";
+            this.label4.Text = "수입";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 63);
+            this.label3.Location = new System.Drawing.Point(24, 63);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "支出";
+            this.label3.Text = "지출";
             // 
             // income_box
             // 
@@ -175,9 +197,10 @@
             "3",
             "4",
             "5"});
-            this.income_box.Location = new System.Drawing.Point(416, 92);
+            this.income_box.Location = new System.Drawing.Point(485, 92);
+            this.income_box.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.income_box.Name = "income_box";
-            this.income_box.Size = new System.Drawing.Size(361, 214);
+            this.income_box.Size = new System.Drawing.Size(420, 214);
             this.income_box.TabIndex = 3;
             // 
             // expenditure_box
@@ -188,28 +211,31 @@
             "1",
             "2",
             "3"});
-            this.expenditure_box.Location = new System.Drawing.Point(21, 92);
+            this.expenditure_box.Location = new System.Drawing.Point(24, 92);
+            this.expenditure_box.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.expenditure_box.Name = "expenditure_box";
-            this.expenditure_box.Size = new System.Drawing.Size(361, 214);
+            this.expenditure_box.Size = new System.Drawing.Size(420, 214);
             this.expenditure_box.TabIndex = 2;
             // 
             // Delete_Button
             // 
-            this.Delete_Button.Location = new System.Drawing.Point(135, 25);
+            this.Delete_Button.Location = new System.Drawing.Point(158, 25);
+            this.Delete_Button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Delete_Button.Name = "Delete_Button";
-            this.Delete_Button.Size = new System.Drawing.Size(102, 26);
+            this.Delete_Button.Size = new System.Drawing.Size(119, 26);
             this.Delete_Button.TabIndex = 1;
-            this.Delete_Button.Text = "删除账本条目";
+            this.Delete_Button.Text = "삭제";
             this.Delete_Button.UseVisualStyleBackColor = true;
             this.Delete_Button.Click += new System.EventHandler(this.Delete_Button_Click);
             // 
             // Add_Button
             // 
-            this.Add_Button.Location = new System.Drawing.Point(21, 25);
+            this.Add_Button.Location = new System.Drawing.Point(24, 25);
+            this.Add_Button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Add_Button.Name = "Add_Button";
-            this.Add_Button.Size = new System.Drawing.Size(102, 26);
+            this.Add_Button.Size = new System.Drawing.Size(119, 26);
             this.Add_Button.TabIndex = 0;
-            this.Add_Button.Text = "添加账本条目";
+            this.Add_Button.Text = "추가";
             this.Add_Button.UseVisualStyleBackColor = true;
             this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
@@ -225,18 +251,21 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox3.Location = new System.Drawing.Point(435, 21);
+            this.groupBox3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox3.Location = new System.Drawing.Point(507, 21);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(387, 170);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox3.Size = new System.Drawing.Size(451, 170);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "当月消费一览";
+            this.groupBox3.Text = "당월 소비";
             // 
             // labelqita
             // 
             this.labelqita.AutoSize = true;
-            this.labelqita.Location = new System.Drawing.Point(137, 122);
+            this.labelqita.Location = new System.Drawing.Point(160, 122);
+            this.labelqita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelqita.Name = "labelqita";
             this.labelqita.Size = new System.Drawing.Size(57, 16);
             this.labelqita.TabIndex = 9;
@@ -245,7 +274,8 @@
             // labelshuidian
             // 
             this.labelshuidian.AutoSize = true;
-            this.labelshuidian.Location = new System.Drawing.Point(15, 122);
+            this.labelshuidian.Location = new System.Drawing.Point(18, 122);
+            this.labelshuidian.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelshuidian.Name = "labelshuidian";
             this.labelshuidian.Size = new System.Drawing.Size(56, 16);
             this.labelshuidian.TabIndex = 8;
@@ -254,7 +284,8 @@
             // labelmedc
             // 
             this.labelmedc.AutoSize = true;
-            this.labelmedc.Location = new System.Drawing.Point(261, 59);
+            this.labelmedc.Location = new System.Drawing.Point(304, 59);
+            this.labelmedc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelmedc.Name = "labelmedc";
             this.labelmedc.Size = new System.Drawing.Size(56, 16);
             this.labelmedc.TabIndex = 7;
@@ -263,7 +294,8 @@
             // labeljiaotong
             // 
             this.labeljiaotong.AutoSize = true;
-            this.labeljiaotong.Location = new System.Drawing.Point(137, 59);
+            this.labeljiaotong.Location = new System.Drawing.Point(160, 59);
+            this.labeljiaotong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labeljiaotong.Name = "labeljiaotong";
             this.labeljiaotong.Size = new System.Drawing.Size(56, 16);
             this.labeljiaotong.TabIndex = 6;
@@ -272,7 +304,8 @@
             // labelfood
             // 
             this.labelfood.AutoSize = true;
-            this.labelfood.Location = new System.Drawing.Point(15, 59);
+            this.labelfood.Location = new System.Drawing.Point(18, 59);
+            this.labelfood.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelfood.Name = "labelfood";
             this.labelfood.Size = new System.Drawing.Size(56, 16);
             this.labelfood.TabIndex = 5;
@@ -281,74 +314,82 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(137, 93);
+            this.label9.Location = new System.Drawing.Point(160, 93);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 16);
+            this.label9.Size = new System.Drawing.Size(81, 16);
             this.label9.TabIndex = 4;
-            this.label9.Text = "个人其他:";
+            this.label9.Text = "개인 기타:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 93);
+            this.label8.Location = new System.Drawing.Point(18, 93);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 16);
+            this.label8.Size = new System.Drawing.Size(60, 16);
             this.label8.TabIndex = 3;
-            this.label8.Text = "水电:";
+            this.label8.Text = "공과금:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(261, 33);
+            this.label7.Location = new System.Drawing.Point(304, 33);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 16);
             this.label7.TabIndex = 2;
-            this.label7.Text = "医疗:";
+            this.label7.Text = "의료:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(137, 33);
+            this.label6.Location = new System.Drawing.Point(160, 33);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 1;
-            this.label6.Text = "交通:";
+            this.label6.Text = "교통:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 33);
+            this.label5.Location = new System.Drawing.Point(18, 33);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 16);
             this.label5.TabIndex = 0;
-            this.label5.Text = "饮食:";
+            this.label5.Text = "식사:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(18, 34);
+            this.label15.Location = new System.Drawing.Point(21, 34);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(55, 16);
+            this.label15.Size = new System.Drawing.Size(71, 16);
             this.label15.TabIndex = 11;
-            this.label15.Text = "总支出";
+            this.label15.Text = "지출합계";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(18, 86);
+            this.label16.Location = new System.Drawing.Point(21, 86);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 16);
+            this.label16.Size = new System.Drawing.Size(71, 16);
             this.label16.TabIndex = 12;
-            this.label16.Text = "总收入";
+            this.label16.Text = "수입합계";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(18, 136);
+            this.label17.Location = new System.Drawing.Point(21, 136);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 16);
             this.label17.TabIndex = 13;
-            this.label17.Text = "结余";
+            this.label17.Text = "잔금";
             // 
             // groupBox4
             // 
@@ -358,18 +399,20 @@
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox4.Location = new System.Drawing.Point(195, 20);
+            this.groupBox4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox4.Location = new System.Drawing.Point(227, 20);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(203, 170);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox4.Size = new System.Drawing.Size(237, 170);
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "小结";
             // 
             // jieyu
             // 
             this.jieyu.AutoSize = true;
-            this.jieyu.Location = new System.Drawing.Point(93, 136);
+            this.jieyu.Location = new System.Drawing.Point(108, 136);
+            this.jieyu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.jieyu.Name = "jieyu";
             this.jieyu.Size = new System.Drawing.Size(34, 16);
             this.jieyu.TabIndex = 15;
@@ -378,7 +421,8 @@
             // labelzongshouru
             // 
             this.labelzongshouru.AutoSize = true;
-            this.labelzongshouru.Location = new System.Drawing.Point(93, 86);
+            this.labelzongshouru.Location = new System.Drawing.Point(108, 86);
+            this.labelzongshouru.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelzongshouru.Name = "labelzongshouru";
             this.labelzongshouru.Size = new System.Drawing.Size(34, 16);
             this.labelzongshouru.TabIndex = 14;
@@ -387,7 +431,8 @@
             // labelzongzhichu
             // 
             this.labelzongzhichu.AutoSize = true;
-            this.labelzongzhichu.Location = new System.Drawing.Point(93, 34);
+            this.labelzongzhichu.Location = new System.Drawing.Point(108, 34);
+            this.labelzongzhichu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelzongzhichu.Name = "labelzongzhichu";
             this.labelzongzhichu.Size = new System.Drawing.Size(34, 16);
             this.labelzongzhichu.TabIndex = 10;
@@ -397,27 +442,18 @@
             // 
             this.sqLiteCommand1.CommandText = null;
             // 
-            // chushihuariqi
-            // 
-            this.chushihuariqi.Location = new System.Drawing.Point(436, 25);
-            this.chushihuariqi.Name = "chushihuariqi";
-            this.chushihuariqi.Size = new System.Drawing.Size(149, 25);
-            this.chushihuariqi.TabIndex = 7;
-            this.chushihuariqi.Text = "显示全部日期条目";
-            this.chushihuariqi.UseVisualStyleBackColor = true;
-            this.chushihuariqi.Click += new System.EventHandler(this.chushihuariqi_Click);
-            // 
             // personal_ledger
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 561);
+            this.ClientSize = new System.Drawing.Size(983, 561);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.user_name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "personal_ledger";
             this.Text = "personal_ledger";
