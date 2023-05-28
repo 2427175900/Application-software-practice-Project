@@ -46,21 +46,21 @@ namespace ledger
 
 
             //通过便利调用所有用户 的最大支出上限
-            for (int i = 0; i < users.Length; i++)
+            for (int i = 0; i <10; i++)
             {
                 //MessageBox.Show(i.ToString());
                 maxsum[i] = db.rtn_max_sum(users[i]);
             }
 
             //当月总消费
-            for (int i = 0; i < users.Length; i++)
+            for (int i = 0; i < 10; i++)
             {
                 sum[i] = db.rtn_expenditure_amount_all_with_moth(users[i], dt);
             }
 
 
             //通过遍历将 当月 各个方面支出 调用出来
-            for (int i = 0; i < users.Length; i++)
+            for (int i = 0; i < 10; i++)
             {
                 int[] eatamout = db.rtn_expenditure_amount_type_with_date(users[i], "식사", dt);
                 int[] taramout = db.rtn_expenditure_amount_type_with_date(users[i], "교통", dt);
@@ -93,7 +93,7 @@ namespace ledger
             listView1.Items.Clear();
 
             //将值依次写入 listview
-            for (int i = 0; i < users.Length; i++)
+            for (int i = 0; i <10; i++)
             {
                 item = new ListViewItem(users[i]);     //用户名写入
                 item.SubItems.Add(maxsum[i].ToString());            //用户支出上限写入
@@ -132,6 +132,9 @@ namespace ledger
         {
             PerformCustomLogic();
         }
+
+        
+        
         internal void UpdateLabel(string text)
         {
             throw new NotImplementedException();
@@ -179,8 +182,11 @@ namespace ledger
           
         }
 
+
+
         private void button1_Click(object sender, EventArgs e)
         {
+            
             //获取选中行的 第一个元素(name)
             if (listView1.SelectedItems.Count > 0)
             {
@@ -188,8 +194,28 @@ namespace ledger
                 username = selectedItem.SubItems[0].Text;
                 // 使用 name 进行进一步的操作
             }
-            personal_ledger p = new personal_ledger();
+            personal_ledger p = new personal_ledger(username);
             p.Show();
+        }
+
+
+
+        private void dltUser_Click(object sender, EventArgs e)
+        {
+           // db.dbopen();
+           // if (listView1.SelectedItems.Count > 0)
+           // {
+                
+           //     ListViewItem selectedItem = listView1.SelectedItems[0];
+           //     username = selectedItem.SubItems[0].Text;
+           //      //使用 name 进行进一步的操作
+           //     db.del_user(username);
+
+                
+           // }
+           //db.dbclose();
+
+           // PerformCustomLogic();
         }
     }
 }

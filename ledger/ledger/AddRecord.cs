@@ -18,6 +18,7 @@ namespace ledger
         {
             user_name = labelContent;//获取用户名
             InitializeComponent();
+            
         }
 
         database db = new database();//创建数据库的对象

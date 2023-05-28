@@ -93,7 +93,7 @@ namespace ledger
         {
 
             string[] names = (db.rtn_name());
-            if(names.Length > 10) {
+            if(names.Length >= 10) {
                 return false;
             }
             return true;
