@@ -39,19 +39,63 @@ namespace ledger
         private void button1_Click(object sender, EventArgs e)
         {
             String name = txtName.Text;
-            MessageBox.Show(name);
-            try
-            { 
-                db.insert_new(name);
-            }catch (ConstraintException ex)
+
+            //储存的用户小于10 的时候 进行插入操作
+            if (maxUser())
             {
-                MessageBox.Show(ex.ToString());
+                //接收所有用户名到 names
+                string[] names = (db.rtn_name());
+
+                //在没有用户的情况下, 直接进行插入
+                if (names.Length > 0)
+                {
+
+
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        //用户名是否已存在判断
+                        if (names[i] == name)
+                        {
+                            MessageBox.Show("\"" + name + "\"" + " 사용자 존재합니다. 다시해주세요.");
+                            break;
+                        }
+                        else
+                        {
+
+                            db.insert_new(name);
+                            MessageBox.Show("사용자" + "\"" + name + "\"" + "가 추가완료 되었습니다.");
+                            break;
+
+
+                        }
+                    }
+
+                }
+                else//插入操作完成后 弹窗提示
+                {
+                    db.insert_new(name);
+                    MessageBox.Show("사용자" + "\"" + name + "\"" + "가 추가완료 되었습니다.");
+                }
+                //插入完成后关闭该窗口
+                this.Close();
             }
-            
-            
+            //用户数 超过10 的情况 弹窗提示后关闭窗口
+            else
+            {
+                MessageBox.Show("사용자 수가 10명이 넘었습니다. 추가 볼가능 합니다.");
+                this.Close();
+            }
         }
 
-        // 获取数据库中的行数
-       
+        // 检测储存的用户是否大于10 
+        private bool maxUser()
+        {
+
+            string[] names = (db.rtn_name());
+            if(names.Length > 10) {
+                return false;
+            }
+            return true;
+        }
     }
 }

@@ -45,11 +45,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(3, 22);
+            this.label1.Location = new System.Drawing.Point(35, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 21);
+            this.label1.Size = new System.Drawing.Size(59, 21);
             this.label1.TabIndex = 1;
-            this.label1.Text = "UserName:";
+            this.label1.Text = "이름:";
             // 
             // button1
             // 
@@ -58,7 +58,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 32);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Add";
+            this.button1.Text = "추가";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
