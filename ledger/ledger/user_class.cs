@@ -256,6 +256,22 @@ namespace ledger
             return dataArray;
         }
 
+        public int rtn_expenditure_amount_all_with_moth(String name, String today_date)
+        {
+            //返回 当月总消费，输入日期格式"yyyy-MM"
+
+            String sql = $"SELECT expenditure_amount FROM expenditure WHERE users_name='{name}' AND today_date LIKE '%{today_date}%'";
+            DataTable dt = select_sql(sql);
+
+            int data = 0;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                data += Convert.ToInt32(dt.Rows[i]["expenditure_amount"]);
+            }
+
+            return data;
+        }
+
         public String[] rtn_expenditure_id_two_inp(String name, String today_date)
         {
             //返回支出的id 传参name和日期today_date, 依据月份分类输入日期格式"yyyy-MM"即可
