@@ -27,6 +27,8 @@ namespace ledger
             this.conn.Open();
             SQLiteCommand cmd = new SQLiteCommand("PRAGMA foreign_keys = ON", this.conn);
             cmd.ExecuteNonQuery();
+            String yueshu = "PRAGMA foreign_keys = OFF";
+            execute_sql(yueshu);
         }
 
         //关闭数据库
@@ -126,8 +128,8 @@ namespace ledger
             execute_sql(sql3);
 
             //开启外键约束
-            String yueshu2 = "PRAGMA foreign_keys = ON";
-            execute_sql(yueshu2);
+            //String yueshu2 = "PRAGMA foreign_keys = ON";
+            //execute_sql(yueshu2);
 
             return;
         }

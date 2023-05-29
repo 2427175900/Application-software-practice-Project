@@ -20,7 +20,8 @@ namespace ledger
         database db = new database();
         public string username;  //用户名 --  选中行的第一个项目(name)
 
-
+        int usersmouthsum = 0;      //用户当前支出
+        int usersmouthmaxsum = 0;   //用户最大支出上限
         //数据库内容同步函数
         private void PerformCustomLogic()
         {
@@ -98,34 +99,43 @@ namespace ledger
             for (int i = 0; i <users.Length; i++)
             {
                 item = new ListViewItem(users[i]);     //用户名写入
-                item.SubItems.Add(maxsum[i].ToString());            //用户支出上限写入
-                item.SubItems.Add(sum[i].ToString());               //用户当月指出写入
+                item.SubItems.Add(maxsum[i].ToString("N0", System.Globalization.CultureInfo.CurrentCulture));            //用户支出上限写入
+                item.SubItems.Add(sum[i].ToString("N0", System.Globalization.CultureInfo.CurrentCulture));               //用户当月指出写入
 
-                item.SubItems.Add(eat[i].ToString());               //用户吃饭写入
-                item.SubItems.Add(tar[i].ToString());               //用户交通
-                item.SubItems.Add(med[i].ToString());               //用户医疗
-                item.SubItems.Add(life[i].ToString());              //用户生活
-                item.SubItems.Add(other[i].ToString());             //用户其他
+                item.SubItems.Add(eat[i].ToString("N0", System.Globalization.CultureInfo.CurrentCulture));               //用户吃饭写入
+                item.SubItems.Add(tar[i].ToString("N0", System.Globalization.CultureInfo.CurrentCulture));               //用户交通
+                item.SubItems.Add(med[i].ToString("N0", System.Globalization.CultureInfo.CurrentCulture));               //用户医疗
+                item.SubItems.Add(life[i].ToString("N0", System.Globalization.CultureInfo.CurrentCulture));              //用户生活
+                item.SubItems.Add(other[i].ToString("N0", System.Globalization.CultureInfo.CurrentCulture));             //用户其他
                 listView1.Items.Add(item);
 
             }
 
 
             // 所有用户的总支出
-            int usersmouthsum = 0;
+            
             for (int i = 0; i < sum.Length; i++)
             {
                 usersmouthsum += sum[i];
             }
-            mouthsum.Text = usersmouthsum.ToString();
+            mouthsum.Text = usersmouthsum.ToString("N0", System.Globalization.CultureInfo.CurrentCulture);
 
             // 所有用户的最大上限合
-            int usersmouthmaxsum = 0;
+            
             for (int i = 0; i < maxsum.Length; i++)
             {
                 usersmouthmaxsum += maxsum[i];
             }
-            usersmaxsum.Text = usersmouthmaxsum.ToString();
+            usersmaxsum.Text = usersmouthmaxsum.ToString("N0", System.Globalization.CultureInfo.CurrentCulture);
+
+            if(usersmouthmaxsum-usersmouthsum >= usersmouthmaxsum * 0.3)
+            {
+                mouthsum.ForeColor = Color.Green;
+            }
+            else if(usersmouthmaxsum - usersmouthsum >= usersmouthmaxsum * 0.6)
+            {
+                mouthsum.ForeColor = Color.Red;
+            }
         
             db.dbclose();
 
