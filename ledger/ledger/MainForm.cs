@@ -24,8 +24,7 @@ namespace ledger
         //数据库内容同步函数
         private void PerformCustomLogic()
         {
-            int usersmouthsum = 0;      //用户当前支出
-            int usersmouthmaxsum = 0;   //用户最大支出上限
+            
             db.dbopen();//连接数据库
 
             //所有用户名
