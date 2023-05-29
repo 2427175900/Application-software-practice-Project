@@ -31,9 +31,10 @@ namespace ledger
             //所有用户名
             string[] users = new string[10];
             users = db.rtn_name();
-            
 
 
+            int usersmouthsum = 0;      //用户当前支出
+            int usersmouthmaxsum = 0;   //用户最大支出上限
             int[] maxsum = new int[10]; //所有用户的最大支出 上限
             int[] sum = new int[10];    //总消费
             int[] eat = new int[10];    //吃饭类型支出
@@ -41,7 +42,7 @@ namespace ledger
             int[] med = new int[10];    //医疗
             int[] life = new int[10];    //生活
             int[] other = new int[10];  //其他
-
+            
 
             DateTime date = DateTime.Now; //当前时间
             string dt = date.ToString("yyyy-MM");
@@ -59,6 +60,7 @@ namespace ledger
             for (int i = 0; i < users.Length; i++)
             {
                 sum[i] = db.rtn_expenditure_amount_all_with_moth(users[i], dt);
+
             }
 
 
