@@ -83,6 +83,12 @@
     <Compile Include="Cap_amount.Designer.cs">
       <DependentUpon>Cap_amount.cs</DependentUpon>
     </Compile>
+    <Compile Include="导出.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="导出.Designer.cs">
+      <DependentUpon>导出.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <EmbeddedResource Include="Cap_amount.resx">
       <DependentUpon>Cap_amount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ko-KR.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +131,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="导出.resx">
+      <DependentUpon>导出.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

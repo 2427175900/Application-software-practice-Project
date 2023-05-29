@@ -47,6 +47,7 @@
             this.dltUser = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.daochu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +68,6 @@
             // 
             // listView1
             // 
-            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -77,6 +77,7 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
+            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.HideSelection = false;
             this.listView1.Name = "listView1";
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -117,8 +118,8 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.mouthsum);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -156,11 +157,19 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
+            // daochu
+            // 
+            resources.ApplyResources(this.daochu, "daochu");
+            this.daochu.Name = "daochu";
+            this.daochu.UseVisualStyleBackColor = true;
+            this.daochu.Click += new System.EventHandler(this.daochu_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.daochu);
             this.Controls.Add(this.dltUser);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -171,6 +180,7 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -201,6 +211,7 @@
         private System.Windows.Forms.Button dltUser;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button daochu;
     }
 }
 

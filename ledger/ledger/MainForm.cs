@@ -20,12 +20,12 @@ namespace ledger
         database db = new database();
         public string username;  //用户名 --  选中行的第一个项目(name)
 
-        int usersmouthsum = 0;      //用户当前支出
-        int usersmouthmaxsum = 0;   //用户最大支出上限
+       
         //数据库内容同步函数
         private void PerformCustomLogic()
         {
-           
+            int usersmouthsum = 0;      //用户当前支出
+            int usersmouthmaxsum = 0;   //用户最大支出上限
             db.dbopen();//连接数据库
 
             //所有用户名
@@ -273,6 +273,18 @@ namespace ledger
                
             }
             
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void daochu_Click(object sender, EventArgs e)
+        {
+            导出 dao = new 导出();
+            dao.CopyListViewItems(listView1);
+            dao.Show();
         }
     }
 }
