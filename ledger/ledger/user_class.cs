@@ -111,9 +111,23 @@ namespace ledger
         public void del_user(String name)
         {
             //删除一个用户的所有信息
-
-            String sql = $"DELETE FROM user_info WHERE users_name='{name}'";
+            //关闭外键约束
+            String yueshu = "PRAGMA foreign_keys = OFF";
+            execute_sql(yueshu);
+            
+            //删除expenditure 表 用户内容
+            String sql = $"DELETE FROM expenditure WHERE users_name='{name}'";
             execute_sql(sql);
+           //删除income 表 用户内容
+            String sql2 = $"DELETE FROM income WHERE users_name='{name}'";
+            execute_sql(sql2);
+            //删除user_info 表 用户内容
+            String sql3 = $"DELETE FROM user_info WHERE users_name='{name}'";
+            execute_sql(sql3);
+
+            //开启外键约束
+            String yueshu2 = "PRAGMA foreign_keys = ON";
+            execute_sql(yueshu2);
 
             return;
         }
