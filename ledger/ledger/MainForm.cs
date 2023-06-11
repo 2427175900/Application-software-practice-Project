@@ -134,7 +134,7 @@ namespace ledger
             }
             usersmaxsum.Text = usersmouthmaxsum.ToString("N0", System.Globalization.CultureInfo.CurrentCulture);
 
-            if(usersmouthsum< usersmouthmaxsum * 0.5)//usermouthmansum = 当月最大指出，， usermouthsum = 当前用户指出
+            if(usersmouthsum< usersmouthmaxsum * 0.5||usersmouthsum==0)//usermouthmansum = 当月最大指出，， usermouthsum = 当前用户指出
             {
                 mouthsum.ForeColor = Color.Green;
                 usersmaxsum.ForeColor = Color.Green;
