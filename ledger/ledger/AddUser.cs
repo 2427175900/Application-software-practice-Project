@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ledger
 {
@@ -34,6 +35,10 @@ namespace ledger
         {
            db.dbclose();
            
+        }
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            txtName.Text = txtName.Text.Replace(" ", ""); // 移除空格
         }
 
         //点击按钮的时候 把 name  插入到数据库
@@ -71,6 +76,10 @@ namespace ledger
                         }
                     }
 
+                }
+                else if(name == null)
+                {
+                    MessageBox.Show("사용자 이름 입력해주세요");
                 }
                 else//插入操作完成后 弹窗提示
                 {

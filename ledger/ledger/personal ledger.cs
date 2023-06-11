@@ -121,7 +121,7 @@ namespace ledger
            
             usersum = Convert.ToInt32(labelzongzhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
-            if (usersum < usermax * 0.5)
+            if (usersum >= 0 && usersum < usermax * 0.5||usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
                 labelzongzhichu.ForeColor = Color.Green;
@@ -158,7 +158,7 @@ namespace ledger
             shangxian.Text = Convert.ToString(sum);//修改显示的lable
             usersum = Convert.ToInt32(labelzongzhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
-            if (usersum < usermax * 0.5)
+            if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
                 labelzongzhichu.ForeColor = Color.Green;
@@ -269,7 +269,7 @@ namespace ledger
             labelqita.Text = qitazong.ToString();
             usersum = Convert.ToInt32(labelzongzhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
-            if (usersum < usermax * 0.5)
+            if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
                 labelzongzhichu.ForeColor = Color.Green;
@@ -325,7 +325,7 @@ namespace ledger
 
                     usersum = Convert.ToInt32(labelzongzhichu.Text);
                     usermax = Convert.ToInt32(shangxian.Text);
-                    if (usersum < usermax * 0.5)
+                    if (usersum >= 0 && usersum < usermax * 0.5)
                     {
                         shangxian.ForeColor = Color.Green;
                         labelzongzhichu.ForeColor = Color.Green;
@@ -413,7 +413,7 @@ namespace ledger
 
             usersum = Convert.ToInt32(labelzongzhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
-            if (usersum < usermax * 0.5)
+            if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
                 labelzongzhichu.ForeColor = Color.Green;
@@ -454,7 +454,7 @@ namespace ledger
             }
             usersum = Convert.ToInt32(labelzongzhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
-            if (usersum < usermax * 0.5)
+            if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
                 labelzongzhichu.ForeColor = Color.Green;
@@ -492,7 +492,7 @@ namespace ledger
 
             usersum = Convert.ToInt32(labelzongzhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
-            if (usersum < usermax * 0.5)
+            if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
                 labelzongzhichu.ForeColor = Color.Green;
