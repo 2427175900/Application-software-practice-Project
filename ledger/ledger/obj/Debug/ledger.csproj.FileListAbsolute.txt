@@ -148,3 +148,13 @@ C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\bin\D
 C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.导出.resources
 C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.MainForm.ko-KR.resources
 C:\Users\a2427\Desktop\Application-software-practice-Project\ledger\ledger\obj\Debug\ko-KR\ledger.resources.dll
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\ko-KR\ledger.resources.dll
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\EPPlus.dll
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\EPPlus.xml
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.导出.resources
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ledger.MainForm.ko-KR.resources
+C:\Users\admin\Desktop\yzx\Application-software-practice-Project\ledger\ledger\obj\Debug\ko-KR\ledger.resources.dll

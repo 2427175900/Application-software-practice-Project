@@ -61,6 +61,8 @@
             this.labelzongshouru = new System.Windows.Forms.Label();
             this.labelzongzhichu = new System.Windows.Forms.Label();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+            this.dangyuezhichu = new System.Windows.Forms.Label();
+            this.aa = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -69,7 +71,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(604, 25);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(172, 26);
@@ -81,7 +83,7 @@
             this.user_name.AutoSize = true;
             this.user_name.BackColor = System.Drawing.Color.Transparent;
             this.user_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.user_name.Font = new System.Drawing.Font("궁서", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.user_name.Font = new System.Drawing.Font("Gungsuh", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.user_name.ForeColor = System.Drawing.SystemColors.ControlText;
             this.user_name.Location = new System.Drawing.Point(24, 21);
             this.user_name.Name = "user_name";
@@ -92,7 +94,7 @@
             // 上限金额
             // 
             this.上限金额.AutoSize = true;
-            this.上限金额.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.上限金额.Font = new System.Drawing.Font("Gulim", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.上限金额.Location = new System.Drawing.Point(8, 18);
             this.上限金额.Name = "上限金额";
             this.上限金额.Size = new System.Drawing.Size(114, 24);
@@ -104,7 +106,7 @@
             this.groupBox1.Controls.Add(this.shangxian);
             this.groupBox1.Controls.Add(this.Amount_modification);
             this.groupBox1.Controls.Add(this.上限金额);
-            this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(17, 54);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(171, 136);
@@ -114,7 +116,7 @@
             // shangxian
             // 
             this.shangxian.AutoSize = true;
-            this.shangxian.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.shangxian.Font = new System.Drawing.Font("Gulim", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.shangxian.Location = new System.Drawing.Point(17, 56);
             this.shangxian.Name = "shangxian";
             this.shangxian.Size = new System.Drawing.Size(57, 20);
@@ -123,7 +125,7 @@
             // 
             // Amount_modification
             // 
-            this.Amount_modification.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Amount_modification.Font = new System.Drawing.Font("Gulim", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Amount_modification.Location = new System.Drawing.Point(6, 89);
             this.Amount_modification.Name = "Amount_modification";
             this.Amount_modification.Size = new System.Drawing.Size(112, 41);
@@ -142,7 +144,7 @@
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.Delete_Button);
             this.groupBox2.Controls.Add(this.Add_Button);
-            this.groupBox2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox2.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox2.Location = new System.Drawing.Point(17, 200);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(806, 330);
@@ -228,6 +230,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dangyuezhichu);
+            this.groupBox3.Controls.Add(this.aa);
             this.groupBox3.Controls.Add(this.labelqita);
             this.groupBox3.Controls.Add(this.labelshuidian);
             this.groupBox3.Controls.Add(this.labelmedc);
@@ -238,7 +242,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox3.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox3.Location = new System.Drawing.Point(435, 21);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(387, 170);
@@ -371,7 +375,7 @@
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox4.Font = new System.Drawing.Font("Gulim", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox4.Location = new System.Drawing.Point(195, 20);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(203, 170);
@@ -408,6 +412,24 @@
             // sqLiteCommand1
             // 
             this.sqLiteCommand1.CommandText = null;
+            // 
+            // dangyuezhichu
+            // 
+            this.dangyuezhichu.AutoSize = true;
+            this.dangyuezhichu.Location = new System.Drawing.Point(261, 119);
+            this.dangyuezhichu.Name = "dangyuezhichu";
+            this.dangyuezhichu.Size = new System.Drawing.Size(56, 16);
+            this.dangyuezhichu.TabIndex = 11;
+            this.dangyuezhichu.Text = "label12";
+            // 
+            // aa
+            // 
+            this.aa.AutoSize = true;
+            this.aa.Location = new System.Drawing.Point(261, 93);
+            this.aa.Name = "aa";
+            this.aa.Size = new System.Drawing.Size(81, 16);
+            this.aa.TabIndex = 10;
+            this.aa.Text = "당월 지출:";
             // 
             // personal_ledger
             // 
@@ -472,5 +494,7 @@
         private System.Windows.Forms.Label shangxian;
         private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
         private System.Windows.Forms.Button chushihuariqi;
+        private System.Windows.Forms.Label dangyuezhichu;
+        private System.Windows.Forms.Label aa;
     }
 }

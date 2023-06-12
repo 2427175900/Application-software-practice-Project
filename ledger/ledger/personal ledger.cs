@@ -25,19 +25,23 @@ namespace ledger
         }
         int usersum;
         int usermax;
+
+       
+       
+           
+       
         database db = new database();//创建一个数据库的对象
+        string yuefen;
+        int dangyuezongzhichu; 
         private void personal_ledger_Load(object sender, EventArgs e)//在窗口打开的时候更新数据
         {
             db.dbopen();//等待窗口关闭后,打开数据库更新数据
-            
+            yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+            dangyuezongzhichu = db.rtn_expenditure_amount_all_with_moth(us_name, yuefen);
             //db.insert_new("yzx");  //测试的时候添加的用户
 
             int sum = db.rtn_max_sum(us_name);//根据名字找上限金额                      跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!!
             shangxian.Text = Convert.ToString(sum);//修改显示上限金额的lable
-
-
-            
-
 
             user_name.Text = us_name;
 
@@ -73,8 +77,10 @@ namespace ledger
             //结余计算
             jieyu.Text = Convert.ToString(Convert.ToInt32(zongshourujine) - Convert.ToInt32(zongzhichujine));
 
+            yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+
             //饮食总支出
-            int[] food = db.rtn_expenditure_amount_type(us_name, "식사");
+            int[] food = db.rtn_expenditure_amount_type_with_date(us_name, "식사", yuefen);
             int foodzong = 0; //总支出计算
             for (int i = 0; i < food.Length; i++)//循环遍历
             {
@@ -83,7 +89,7 @@ namespace ledger
             labelfood.Text = foodzong.ToString();
 
             //交通总支出
-            int[] jiaotong = db.rtn_expenditure_amount_type(us_name, "교통");
+            int[] jiaotong = db.rtn_expenditure_amount_type_with_date(us_name, "교통", yuefen);
             int jiaotongzong = 0; //总支出计算
             for (int i = 0; i < jiaotong.Length; i++)//循环遍历
             {
@@ -92,7 +98,7 @@ namespace ledger
             labeljiaotong.Text = jiaotongzong.ToString();
 
             //医疗总支出
-            int[] medc = db.rtn_expenditure_amount_type(us_name, "의료");
+            int[] medc = db.rtn_expenditure_amount_type_with_date(us_name, "의료", yuefen);
             int medczong = 0; //总支出计算
             for (int i = 0; i < medc.Length; i++)//循环遍历
             {
@@ -101,7 +107,7 @@ namespace ledger
             labelmedc.Text = medczong.ToString();
 
             //生活总支出
-            int[] shuidian = db.rtn_expenditure_amount_type(us_name, "생활");
+            int[] shuidian = db.rtn_expenditure_amount_type_with_date(us_name, "생활", yuefen);
             int shuidianzong = 0; //总支出计算
             for (int i = 0; i < shuidian.Length; i++)//循环遍历
             {
@@ -110,16 +116,18 @@ namespace ledger
             labelshuidian.Text = shuidianzong.ToString();
 
             //其他总支出
-            int[] qita = db.rtn_expenditure_amount_type(us_name, "기타");
+            int[] qita = db.rtn_expenditure_amount_type_with_date(us_name, "기타", yuefen);
             int qitazong = 0; //总支出计算
             for (int i = 0; i < qita.Length; i++)//循环遍历
             {
                 qitazong += qita[i];
             }
             labelqita.Text = qitazong.ToString();
-            
-           
-            usersum = Convert.ToInt32(labelzongzhichu.Text);
+
+            dangyuezongzhichu = db.rtn_expenditure_amount_all_with_moth(us_name, yuefen);
+            dangyuezhichu.Text = dangyuezongzhichu.ToString();
+
+            usersum = Convert.ToInt32(dangyuezhichu.Text);     //控制颜色
             usermax = Convert.ToInt32(shangxian.Text);
             if (usersum >= 0 && usersum < usermax * 0.5||usersum == 0)
             {
@@ -129,12 +137,12 @@ namespace ledger
             else if (usersum >= usermax * 0.5 && usersum < usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Orange;
-                labelzongzhichu.ForeColor = Color.Orange;
+                dangyuezhichu.ForeColor = Color.Orange;
             }
             else if (usersum >= usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Red;
-                labelzongzhichu.ForeColor = Color.Red;
+                dangyuezhichu.ForeColor = Color.Red;
             }
 
             db.dbclose();//关闭数据库
@@ -156,22 +164,25 @@ namespace ledger
             db.dbopen();//等待窗口关闭后,打开数据库更新数据
             int sum = db.rtn_max_sum(labelContent);//根据名字找上限金额
             shangxian.Text = Convert.ToString(sum);//修改显示的lable
-            usersum = Convert.ToInt32(labelzongzhichu.Text);
+            yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+            dangyuezongzhichu = db.rtn_expenditure_amount_all_with_moth(us_name, yuefen);
+            dangyuezhichu.Text = dangyuezongzhichu.ToString();
+            usersum = Convert.ToInt32(dangyuezhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
             if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
-                labelzongzhichu.ForeColor = Color.Green;
+                dangyuezhichu.ForeColor = Color.Green;
             }
             else if (usersum >= usermax * 0.5 && usersum < usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Orange;
-                labelzongzhichu.ForeColor = Color.Orange;
+                dangyuezhichu.ForeColor = Color.Orange;
             }
             else if (usersum >= usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Red;
-                labelzongzhichu.ForeColor = Color.Red;
+                dangyuezhichu.ForeColor = Color.Red;
             }
             db.dbclose();
         }
@@ -223,8 +234,10 @@ namespace ledger
             //结余计算
             jieyu.Text = Convert.ToString(Convert.ToInt32(zongshourujine) - Convert.ToInt32(zongzhichujine));
 
+            yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+
             //饮食总支出
-            int[] food = db.rtn_expenditure_amount_type(us_name, "식사");
+            int[] food = db.rtn_expenditure_amount_type_with_date(us_name, "식사", yuefen);
             int foodzong = 0; //总支出计算
             for (int i = 0; i < food.Length; i++)//循环遍历
             {
@@ -233,7 +246,7 @@ namespace ledger
             labelfood.Text = foodzong.ToString();
 
             //交通总支出
-            int[] jiaotong = db.rtn_expenditure_amount_type(us_name, "교통");
+            int[] jiaotong = db.rtn_expenditure_amount_type_with_date(us_name, "교통", yuefen);
             int jiaotongzong = 0; //总支出计算
             for (int i = 0; i < jiaotong.Length; i++)//循环遍历
             {
@@ -242,7 +255,7 @@ namespace ledger
             labeljiaotong.Text = jiaotongzong.ToString();
 
             //医疗总支出
-            int[] medc = db.rtn_expenditure_amount_type(us_name, "의료");
+            int[] medc = db.rtn_expenditure_amount_type_with_date(us_name, "의료", yuefen);
             int medczong = 0; //总支出计算
             for (int i = 0; i < medc.Length; i++)//循环遍历
             {
@@ -251,7 +264,7 @@ namespace ledger
             labelmedc.Text = medczong.ToString();
 
             //生活总支出
-            int[] shuidian = db.rtn_expenditure_amount_type(us_name, "생활");
+            int[] shuidian = db.rtn_expenditure_amount_type_with_date(us_name, "생활", yuefen);
             int shuidianzong = 0; //总支出计算
             for (int i = 0; i < shuidian.Length; i++)//循环遍历
             {
@@ -267,22 +280,25 @@ namespace ledger
                 qitazong += qita[i];
             }
             labelqita.Text = qitazong.ToString();
-            usersum = Convert.ToInt32(labelzongzhichu.Text);
+            yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+            dangyuezongzhichu = db.rtn_expenditure_amount_all_with_moth(us_name, yuefen);
+            dangyuezhichu.Text = dangyuezongzhichu.ToString();
+            usersum = Convert.ToInt32(dangyuezhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
             if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
-                labelzongzhichu.ForeColor = Color.Green;
+                dangyuezhichu.ForeColor = Color.Green;
             }
             else if (usersum >= usermax * 0.5 && usersum < usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Orange;
-                labelzongzhichu.ForeColor = Color.Orange;
+                dangyuezhichu.ForeColor = Color.Orange;
             }
             else if (usersum >= usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Red;
-                labelzongzhichu.ForeColor = Color.Red;
+                dangyuezhichu.ForeColor = Color.Red;
             }
 
 
@@ -322,23 +338,25 @@ namespace ledger
                     {
                         income_box.Items.Add(item); // 将数组中的每个元素添加为选项
                     }
-
-                    usersum = Convert.ToInt32(labelzongzhichu.Text);
+                    yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+                    dangyuezongzhichu = db.rtn_expenditure_amount_all_with_moth(us_name, yuefen);
+                    dangyuezhichu.Text = dangyuezongzhichu.ToString();
+                    usersum = Convert.ToInt32(dangyuezhichu.Text);
                     usermax = Convert.ToInt32(shangxian.Text);
                     if (usersum >= 0 && usersum < usermax * 0.5)
                     {
                         shangxian.ForeColor = Color.Green;
-                        labelzongzhichu.ForeColor = Color.Green;
+                        dangyuezhichu.ForeColor = Color.Green;
                     }
                     else if (usersum >= usermax * 0.5 && usersum < usermax * 0.7)
                     {
                         shangxian.ForeColor = Color.Orange;
-                        labelzongzhichu.ForeColor = Color.Orange;
+                        dangyuezhichu.ForeColor = Color.Orange;
                     }
                     else if (usersum >= usermax * 0.7)
                     {
                         shangxian.ForeColor = Color.Red;
-                        labelzongzhichu.ForeColor = Color.Red;
+                        dangyuezhichu.ForeColor = Color.Red;
                     }
 
                     db.dbclose();
@@ -366,8 +384,10 @@ namespace ledger
             //结余计算
             jieyu.Text = Convert.ToString(Convert.ToInt32(zongshourujine) - Convert.ToInt32(zongzhichujine));
 
+            yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+
             //饮食总支出
-            int[] food = db.rtn_expenditure_amount_type(us_name, "식사");
+            int[] food = db.rtn_expenditure_amount_type_with_date(us_name, "식사", yuefen);
             int foodzong = 0; //总支出计算
             for (int i = 0; i < food.Length; i++)//循环遍历
             {
@@ -376,7 +396,7 @@ namespace ledger
             labelfood.Text = foodzong.ToString();
 
             //交通总支出
-            int[] jiaotong = db.rtn_expenditure_amount_type(us_name, "교통");
+            int[] jiaotong = db.rtn_expenditure_amount_type_with_date(us_name, "교통", yuefen);
             int jiaotongzong = 0; //总支出计算
             for (int i = 0; i < jiaotong.Length; i++)//循环遍历
             {
@@ -385,7 +405,7 @@ namespace ledger
             labeljiaotong.Text = jiaotongzong.ToString();
 
             //医疗总支出
-            int[] medc = db.rtn_expenditure_amount_type(us_name, "의료");
+            int[] medc = db.rtn_expenditure_amount_type_with_date(us_name, "의료", yuefen);
             int medczong = 0; //总支出计算
             for (int i = 0; i < medc.Length; i++)//循环遍历
             {
@@ -394,7 +414,7 @@ namespace ledger
             labelmedc.Text = medczong.ToString();
 
             //生活总支出
-            int[] shuidian = db.rtn_expenditure_amount_type(us_name, "생활");
+            int[] shuidian = db.rtn_expenditure_amount_type_with_date(us_name, "생활", yuefen);
             int shuidianzong = 0; //总支出计算
             for (int i = 0; i < shuidian.Length; i++)//循环遍历
             {
@@ -403,30 +423,32 @@ namespace ledger
             labelshuidian.Text = shuidianzong.ToString();
 
             //其他总支出
-            int[] qita = db.rtn_expenditure_amount_type(us_name, "기타");
+            int[] qita = db.rtn_expenditure_amount_type_with_date(us_name, "기타", yuefen);
             int qitazong = 0; //总支出计算
             for (int i = 0; i < qita.Length; i++)//循环遍历
             {
                 qitazong += qita[i];
             }
             labelqita.Text = qitazong.ToString();
-
-            usersum = Convert.ToInt32(labelzongzhichu.Text);
+            yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+            dangyuezongzhichu = db.rtn_expenditure_amount_all_with_moth(us_name, yuefen);
+            dangyuezhichu.Text = dangyuezongzhichu.ToString();
+            usersum = Convert.ToInt32(dangyuezhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
             if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
-                labelzongzhichu.ForeColor = Color.Green;
+                dangyuezhichu.ForeColor = Color.Green;
             }
             else if (usersum >= usermax * 0.5 && usersum < usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Orange;
-                labelzongzhichu.ForeColor = Color.Orange;
+                dangyuezhichu.ForeColor = Color.Orange;
             }
             else if (usersum >= usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Red;
-                labelzongzhichu.ForeColor = Color.Red;
+                dangyuezhichu.ForeColor = Color.Red;
             }
             db.dbclose();
         }
@@ -435,7 +457,7 @@ namespace ledger
         {
             DateTime selectedDateTime = dateTimePicker1.Value;
             string formattedDateTime = selectedDateTime.ToString("yyyy-MM-dd");
-
+            
             db.dbopen();
             string[] riqitiaomu = db.rtn_expenditure_id_two_inp(us_name, Convert.ToString(formattedDateTime));   //修改条目的checklistbox   跟主界面相连的时候要修改一下!!!!!!!!!!!!!!!!! 
 
@@ -452,22 +474,70 @@ namespace ledger
             {
                 income_box.Items.Add(item); // 将数组中的每个元素添加为选项
             }
-            usersum = Convert.ToInt32(labelzongzhichu.Text);
+            yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+
+            //饮食总支出
+            int[] food = db.rtn_expenditure_amount_type_with_date(us_name, "식사", yuefen);
+            int foodzong = 0; //总支出计算
+            for (int i = 0; i < food.Length; i++)//循环遍历
+            {
+                foodzong += food[i];
+            }
+            labelfood.Text = foodzong.ToString();
+
+            //交通总支出
+            int[] jiaotong = db.rtn_expenditure_amount_type_with_date(us_name, "교통", yuefen);
+            int jiaotongzong = 0; //总支出计算
+            for (int i = 0; i < jiaotong.Length; i++)//循环遍历
+            {
+                jiaotongzong += jiaotong[i];
+            }
+            labeljiaotong.Text = jiaotongzong.ToString();
+
+            //医疗总支出
+            int[] medc = db.rtn_expenditure_amount_type_with_date(us_name, "의료", yuefen);
+            int medczong = 0; //总支出计算
+            for (int i = 0; i < medc.Length; i++)//循环遍历
+            {
+                medczong += medc[i];
+            }
+            labelmedc.Text = medczong.ToString();
+
+            //生活总支出
+            int[] shuidian = db.rtn_expenditure_amount_type_with_date(us_name, "생활", yuefen);
+            int shuidianzong = 0; //总支出计算
+            for (int i = 0; i < shuidian.Length; i++)//循环遍历
+            {
+                shuidianzong += shuidian[i];
+            }
+            labelshuidian.Text = shuidianzong.ToString();
+
+            //其他总支出
+            int[] qita = db.rtn_expenditure_amount_type_with_date(us_name, "기타", yuefen);
+            int qitazong = 0; //总支出计算
+            for (int i = 0; i < qita.Length; i++)//循环遍历
+            {
+                qitazong += qita[i];
+            }
+            dangyuezongzhichu = db.rtn_expenditure_amount_all_with_moth(us_name, yuefen);
+            dangyuezhichu.Text = dangyuezongzhichu.ToString();
+
+            usersum = Convert.ToInt32(dangyuezhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
             if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
-                labelzongzhichu.ForeColor = Color.Green;
+                dangyuezhichu.ForeColor = Color.Green;
             }
             else if (usersum >= usermax * 0.5 && usersum < usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Orange;
-                labelzongzhichu.ForeColor = Color.Orange;
+                dangyuezhichu.ForeColor = Color.Orange;
             }
             else if (usersum >= usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Red;
-                labelzongzhichu.ForeColor = Color.Red;
+                dangyuezhichu.ForeColor = Color.Red;
             }
             db.dbclose();
         }
@@ -489,23 +559,24 @@ namespace ledger
             {
                 income_box.Items.Add(item); // 将数组中的每个元素添加为选项
             }
-
-            usersum = Convert.ToInt32(labelzongzhichu.Text);
+            yuefen = dateTimePicker1.Value.ToString("yyyy-MM");
+            dangyuezongzhichu = db.rtn_expenditure_amount_all_with_moth(us_name, yuefen);
+            usersum = Convert.ToInt32(dangyuezhichu.Text);
             usermax = Convert.ToInt32(shangxian.Text);
             if (usersum >= 0 && usersum < usermax * 0.5 || usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
-                labelzongzhichu.ForeColor = Color.Green;
+                dangyuezhichu.ForeColor = Color.Green;
             }
             else if (usersum >= usermax * 0.5 && usersum < usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Orange;
-                labelzongzhichu.ForeColor = Color.Orange;
+                dangyuezhichu.ForeColor = Color.Orange;
             }
             else if (usersum >= usermax * 0.7)
             {
                 shangxian.ForeColor = Color.Red;
-                labelzongzhichu.ForeColor = Color.Red;
+                dangyuezhichu.ForeColor = Color.Red;
             }
             db.dbclose();
         }
