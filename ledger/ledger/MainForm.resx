@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="button1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 14.25pt</value>
@@ -146,6 +149,9 @@
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <metadata name="btnAddUser.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnAddUser.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 14.25pt</value>
   </data>
@@ -173,30 +179,9 @@
   <data name="&gt;&gt;btnAddUser.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="listView1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10.5pt</value>
-  </data>
-  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 229</value>
-  </data>
-  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>703, 320</value>
-  </data>
-  <data name="listView1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;listView1.Name" xml:space="preserve">
-    <value>listView1</value>
-  </data>
-  <data name="&gt;&gt;listView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listView1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
+  <metadata name="listView1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>이름</value>
   </data>
@@ -267,6 +252,54 @@
   <data name="columnHeader8.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
+  <data name="listView1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.5pt</value>
+  </data>
+  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 229</value>
+  </data>
+  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>703, 320</value>
+  </data>
+  <data name="listView1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;listView1.Name" xml:space="preserve">
+    <value>listView1</value>
+  </data>
+  <data name="&gt;&gt;listView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="groupBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="mouthsum.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="mouthsum.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mouthsum.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt</value>
+  </data>
+  <data name="mouthsum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 54</value>
+  </data>
+  <data name="mouthsum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 29</value>
+  </data>
+  <data name="mouthsum.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="mouthsum.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
   <data name="&gt;&gt;mouthsum.Name" xml:space="preserve">
     <value>mouthsum</value>
   </data>
@@ -306,38 +339,32 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="mouthsum.AutoSize" type="System.Boolean, mscorlib">
+  <metadata name="groupBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="mouthsum.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 18pt</value>
-  </data>
-  <data name="mouthsum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 54</value>
-  </data>
-  <data name="mouthsum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 29</value>
-  </data>
-  <data name="mouthsum.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mouthsum.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;mouthsum.Name" xml:space="preserve">
-    <value>mouthsum</value>
-  </data>
-  <data name="&gt;&gt;mouthsum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mouthsum.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;mouthsum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+  </metadata>
   <data name="groupBox2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <metadata name="usersmaxsum.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="usersmaxsum.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="usersmaxsum.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt</value>
+  </data>
+  <data name="usersmaxsum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 54</value>
+  </data>
+  <data name="usersmaxsum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 29</value>
+  </data>
+  <data name="usersmaxsum.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="usersmaxsum.Text" xml:space="preserve">
+    <value>label2</value>
   </data>
   <data name="&gt;&gt;usersmaxsum.Name" xml:space="preserve">
     <value>usersmaxsum</value>
@@ -378,36 +405,9 @@
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="usersmaxsum.AutoSize" type="System.Boolean, mscorlib">
+  <metadata name="dltUser.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="usersmaxsum.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 18pt</value>
-  </data>
-  <data name="usersmaxsum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 54</value>
-  </data>
-  <data name="usersmaxsum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 29</value>
-  </data>
-  <data name="usersmaxsum.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="usersmaxsum.Text" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;usersmaxsum.Name" xml:space="preserve">
-    <value>usersmaxsum</value>
-  </data>
-  <data name="&gt;&gt;usersmaxsum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;usersmaxsum.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;usersmaxsum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+  </metadata>
   <data name="dltUser.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 14.25pt</value>
   </data>
@@ -435,6 +435,9 @@
   <data name="&gt;&gt;dltUser.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="panel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>242, 22</value>
   </data>
@@ -456,6 +459,9 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <metadata name="panel2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 17</value>
   </data>
@@ -477,6 +483,9 @@
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <metadata name="daochu.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="daochu.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 10.5pt</value>
   </data>
@@ -507,6 +516,9 @@
   <data name="&gt;&gt;daochu.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="daochu_excel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="daochu_excel.Font" type="System.Drawing.Font, System.Drawing">
     <value>宋体, 10.5pt</value>
   </data>
@@ -538,6 +550,9 @@
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
