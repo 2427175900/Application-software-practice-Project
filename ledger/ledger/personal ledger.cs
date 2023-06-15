@@ -273,7 +273,7 @@ namespace ledger
             labelshuidian.Text = shuidianzong.ToString();
 
             //其他总支出
-            int[] qita = db.rtn_expenditure_amount_type(us_name, "기타");
+            int[] qita = db.rtn_expenditure_amount_type_with_date(us_name, "기타",yuefen);
             int qitazong = 0; //总支出计算
             for (int i = 0; i < qita.Length; i++)//循环遍历
             {
@@ -519,6 +519,8 @@ namespace ledger
             {
                 qitazong += qita[i];
             }
+            labelqita.Text = qitazong.ToString();
+
             dangyuezongzhichu = db.rtn_expenditure_amount_all_with_moth(us_name, yuefen);
             dangyuezhichu.Text = dangyuezongzhichu.ToString();
 
