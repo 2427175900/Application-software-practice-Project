@@ -301,7 +301,7 @@ namespace ledger
             // 添加表头
             foreach (ColumnHeader column in listView.Columns)
             {
-                table += column.Text + "|";
+                table += column.Text + ",";
             }
             table += Environment.NewLine;
 
@@ -310,7 +310,7 @@ namespace ledger
             {
                 foreach (ListViewItem.ListViewSubItem subItem in item.SubItems)
                 {
-                    table += subItem.Text + "|";
+                    table += subItem.Text + ",";
                 }
                 table += Environment.NewLine;
             }
