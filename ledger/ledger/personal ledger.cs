@@ -132,7 +132,7 @@ namespace ledger
             if (usersum >= 0 && usersum < usermax * 0.5||usersum == 0)
             {
                 shangxian.ForeColor = Color.Green;
-                labelzongzhichu.ForeColor = Color.Green;
+                dangyuezhichu.ForeColor = Color.Green;
             }
             else if (usersum >= usermax * 0.5 && usersum < usermax * 0.7)
             {
