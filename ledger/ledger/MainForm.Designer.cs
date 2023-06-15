@@ -162,14 +162,14 @@
             // 
             resources.ApplyResources(this.daochu, "daochu");
             this.daochu.Name = "daochu";
-            this.daochu.UseVisualStyleBackColor = false;
+            this.daochu.UseVisualStyleBackColor = true;
             this.daochu.Click += new System.EventHandler(this.daochu_Click);
             // 
             // daochu_excel
             // 
             resources.ApplyResources(this.daochu_excel, "daochu_excel");
             this.daochu_excel.Name = "daochu_excel";
-            this.daochu_excel.UseVisualStyleBackColor = false;
+            this.daochu_excel.UseVisualStyleBackColor = true;
             this.daochu_excel.Click += new System.EventHandler(this.daochu_excel_Click);
             // 
             // MainForm
